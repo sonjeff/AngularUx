@@ -1,60 +1,102 @@
-<div class="p-grid">
-    <div class="p-col-12">
-        <nb-card>
-            <nb-card-body>
-              <nb-stepper orientation="horizontal">
-                <nb-step [label]="labelOne">
-                  <ng-template #labelOne>First step</ng-template>
-                  <h4>Step content #1</h4>
-                  <p class="lorem">
-                    Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-                    Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-                    gravida vizzle, dang.
-                  </p>
-                  <button nbButton disabled nbStepperNext>prev</button>
-                  <button nbButton nbStepperNext>next</button>
-                </nb-step>
-                <nb-step [label]="labelTwo">
-                  <ng-template #labelTwo>Second step</ng-template>
-                  <h4>Step content #2</h4>
-                  <p class="lorem">
-                    Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-                    Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-                    gravida vizzle, dang.
-                  </p>
-                  <button nbButton nbStepperPrevious>prev</button>
-                  <button nbButton nbStepperNext>next</button>
-                </nb-step>
-                <nb-step label="Third step">
-                  <h4>Step content #3</h4>
-                  <p class="lorem">
-                    Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-                    Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-                    gravida vizzle, dang.
-                  </p>
-                  <button nbButton nbStepperPrevious>prev</button>
-                  <button nbButton nbStepperNext>next</button>
-                </nb-step>
-                <nb-step [label]="labelFour">
-                  <ng-template #labelFour>Fourth step</ng-template>
-                  <h4>Step content #4</h4>
-                  <p class="lorem">
-                    Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-                    Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-                    gravida vizzle, dang.
-                  </p>
-                  <button nbButton nbStepperPrevious>prev</button>
-                  <button nbButton disabled nbStepperNext>next</button>
-                </nb-step>
-              </nb-stepper>
-            </nb-card-body>
-          </nb-card>
-    </div>
-    <!-- <div class="p-col">
+<div class="ui-g">
+  <div class="ui-g-2">
+    <button class="p-button-info" icon="pi pi-chevron-left" type="button" pButton pRipple (click)="backStep()"
+    styleClass="steps-custom"></button>
+  </div>
+  <div class="ui-g-8">
+    <p-steps [model]="steps" [(activeIndex)]="activeIndex" [readonly]="true" styleClass="steps-custom"></p-steps>
 
-    </div>
-    <div class="p-col">
-
-    </div> -->
-
+  </div>
+  <div class="ui-g-2">
+    <button class="p-button-info" icon="pi pi-chevron-right" type="button" pButton pRipple (click)="nextStep()"
+    styleClass="steps-custom"></button>
+  </div>
 </div>
+
+
+<ng-container *ngIf="activeIndex==0">
+  <strong>Información del cliente</strong>
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <div class="p-col-2">
+        Foto
+      </div>
+      <div class="p-col-10">
+        <div class="p-col-12">
+          <div class="p-col-6">
+            <span class="md-inputfield">
+              <label>Primer nombre</label>
+              <input pInputText [(ngModel)]="personalInformation.firstName" style="width:90%" />
+            </span>
+          </div>
+          <div class="p-col-6">
+            <span class="md-inputfield">
+              <label>Primer Apellido</label>
+              <input pInputText [(ngModel)]="personalInformation.lastName" style="width:90%" />
+            </span>
+          </div>
+          <div class="p-col-6">
+            <span class="md-inputfield">
+              <label>Segundo nombre</label>
+              <input pInputText [(ngModel)]="personalInformation.secondName" style="width:90%" />
+            </span>
+          </div>
+          <div class="p-col-6">
+            <span class="md-inputfield">
+              <label>Segundo Apellido</label>
+              <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
+            </span>
+          </div>
+
+        </div>
+        <div class="p-col-12">
+          <div class="p-col-10">
+            <div class="p-col-4">
+            </div>
+            <div class="p-col-8">
+            </div>
+          </div>
+          <div class="p-col-2">
+          </div>
+        </div>
+        <div class="p-col-12">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="p-col">2</div>
+    <div class="p-col">3</div>
+  </div>
+</ng-container>
+<ng-container *ngIf="activeIndex==1">
+
+</ng-container>
+
+<!-- <div class="p-grid">
+  <div class="p-col-12">
+    <nb-card>
+      <nb-card-body>
+
+        <nb-stepper orientation="horizontal">
+          <nb-step [label]="'Solicitante'">
+           >
+
+            <button nbButton disabled nbStepperNext>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+          <nb-step [label]="'Amparados'">
+
+            <button nbButton disabled nbStepperNext>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+          <nb-step label="Documentos">
+
+            <button nbButton disabled nbStepperNext>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+        </nb-stepper>
+      </nb-card-body>
+    </nb-card>
+  </div> -->

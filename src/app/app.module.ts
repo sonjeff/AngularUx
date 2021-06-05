@@ -12,6 +12,11 @@ import { StepComponent } from './components/step/step.component';
 import { NbSidebarModule, NbButtonModule } from '@nebular/theme';
 import { CustomerInformationComponent } from './components/customer-information/customer-information.component';
 import { HousingInformationComponent } from './components/housing-information/housing-information.component';
+import { FormsModule } from '@angular/forms';
+import {StepsModule} from 'primeng/steps';
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -19,20 +24,23 @@ import { HousingInformationComponent } from './components/housing-information/ho
     StepComponent,
     CustomerInformationComponent,
     HousingInformationComponent,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbSidebarModule, 
     NbButtonModule,
     NbStepperModule,
     NbThemeModule.forRoot(),
-    NbCardModule
+    NbCardModule,
+    FormsModule,
+    StepsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
