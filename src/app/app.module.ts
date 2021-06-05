@@ -21,6 +21,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule, } from '@angular/material/grid-list';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
+import {CheckboxModule} from 'primeng/checkbox';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     FormsModule,
     StepsModule,
     ButtonModule,
+    CardModule,
+    DropdownModule,
+    CalendarModule,
+    CheckboxModule,
+    InputTextModule,
     NbTreeGridModule, NbTabsetModule, MatCardModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, MatGridListModule
   ],
   providers: [],
