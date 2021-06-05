@@ -12,6 +12,10 @@ import { StepComponent } from './components/step/step.component';
 import { NbSidebarModule, NbButtonModule } from '@nebular/theme';
 import { CustomerInformationComponent } from './components/customer-information/customer-information.component';
 import { HousingInformationComponent } from './components/housing-information/housing-information.component';
+import { FormsModule } from '@angular/forms';
+import {StepsModule} from 'primeng/steps';
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -24,13 +28,13 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     StepComponent,
     CustomerInformationComponent,
     HousingInformationComponent,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbSidebarModule, 
@@ -38,6 +42,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     NbStepperModule,
     NbThemeModule.forRoot(),
     NbCardModule,
+    FormsModule,
+    StepsModule,
+    ButtonModule,
     NbTreeGridModule, NbTabsetModule, MatCardModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, MatGridListModule
   ],
   providers: [],

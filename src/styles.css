@@ -1,4 +1,221 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+/* .login-body {
+  background: url("../src/assets/images/login2x.png") top left no-repeat #f7f7f7;
+  background-size: 100% auto;
+} */
+
+.margin-perfect {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+/* .logo {
+  background: url("../src/assets/images/logo2x.png") top left no-repeat !important;
+  background-size: 200px 30px !important;
+} */
+
+.p-blockui {
+  opacity: 0.4 !important;
+}
+
+/* 
+.topbar-item-name {
+  background-color: darkgray !important;
+} */
+
+.footer {
+  /* position: absolute; */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  bottom: 0;
+}
+
+legend {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0 !important;
+}
+
+.card-header {
+  font-size: 1.6em !important;
+}
+
+body .layout-wrapper.layout-compact {
+  font-size: 12px !important;
+}
+
+body .p-component,
+body .p-component .p-component,
+body .p-dropdown .p-inputtext {
+
+  font-size: 12px !important;
+}
+
+/* .p-datatable .p-datatable-thead > tr > th {
+  background-color: #3F51B5 !important;
+  color: white !important;
+  border-color: #bdbdbd !important;
+} */
+
+/* .p-table .p-table-thead > tr > th {
+    background-color: #3F51B5 !important;
+    border-color:     #bdbdbd !important;
+    color:            white   !important;
+  } */
+
+/* .p-table .p-table-thead > tr > td {
+    background-color: #ffffff;
+    padding:          0.625em 1em;
+    border:           1px solid #cacaca;
+  }
+
+.p-datatable .p-datatable-thead > tr th .p-sortable-column-icon {
+    color: white !important;
+} */
+
+.readOnly {
+  opacity: 1 !important;
+}
+
+.readOnly .p-disabled {
+  opacity: 1 !important;
+}
+
+.readOnly .p-calendar .p-inputtext {
+  opacity: 1 !important;
+}
+
+.readOnly .p-autocomplete .p-autocomplete-input {
+  opacity: 1 !important;
+}
+
+.p-fieldset-toggler {
+  font-size: 12px !important;
+}
+
+.p-table button {
+  font-size: 9px !important;
+  border-radius: 2px !important;
+}
+
+.p-treetable button {
+  font-size: 9px !important;
+  border-radius: 2px !important;
+}
+
+.p-autocomplete-input-token input {
+  font-size: 12px !important;
+}
+
+.paddingspanhistable {
+  padding-top: 20px !important;
+}
+
+/*haveinfo clase para agregar icono denotanto que existe informacion*/
+
+body .p-fieldset.haveinfo .p-fieldset-legend {
+  background: url("/assets/images/medicalCenter/info.png") no-repeat right padding-box;
+  background-size: 2em;
+  padding-right: 1.5em;
+}
+
+
+body .p-datatable.p-datatable-scrollable thead tr th {
+  font-size: 12px !important;
+}
+
+/*Inputs mdinputfield necesitan un margen para que el componente de errores se muestre correctamente*/
+.inputfieldform {
+  margin-top: 1.5em;
+}
+.p-dropdown  {
+  min-width: 90%;
+}
+
+.p-input-filled .p-inputtext {
+  background-color: transparent;
+}
+
+.p-input-filled .p-inputtext:enabled:hover {
+  background-color: transparent;
+}
+.p-input-filled .p-inputtext:enabled:focus {
+  background-color: transparent;
+}
+.p-input-filled .p-calendar-w-btn {
+  background-color: transparent;
+}
+.ui-helper-clearfix {
+  text-align: center;
+}
+.p-datatable-footer{
+  text-align: center;
+}
+
+.material-icons {
+  font-size: 1.2em;
+}
+
+.p-button.p-button-icon-only {
+  width: 2.5rem;
+}
+
+.p-input-filled .p-dropdown {
+  background-color: transparent;
+
+}
+
+.p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8,
+.p-col-9, .p-col-10, .p-col-11, .p-col-12 {
+  display: inline-block !important;
+}
+
+.p-fluid > .p-grid > [class*="p-col"],
+.p-fieldset-content > [class*="p-col"] {
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+.p-grid > .p-col,
+.p-grid > [class*="p-col"] {
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+
+.p-inputtext,
+.p-inputtext .p-dropdown {
+  padding: 2px;
+}
+
+.p-button.p-button-icon-only.p-button-rounded {
+  height: 2.50rem;
+  width: 2.50rem;
+}
+
+.card h2 {
+  font-size: 1.375em;
+  font-weight: 400;
+}
+
+.p-dropdown .p-dropdown-label.p-placeholder{
+  margin-top: 5px;
+}
+
+.p-calendar .p-button.p-button-icon-only {
+  width: 2.75rem;
+  padding: 0.2rem;
+}
+.p-dropdown .p-dropdown-panel {
+  width: 100%;
+}
+
+.p-datatable.p-datatable-gridlines .p-paginator-bottom {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
