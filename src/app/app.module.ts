@@ -9,11 +9,15 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { StepComponent } from './components/step/step.component';
 
 import { NbSidebarModule, NbButtonModule } from '@nebular/theme';
+import { CustomerInformationComponent } from './components/customer-information/customer-information.component';
+import { HousingInformationComponent } from './components/housing-information/housing-information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepComponent
+    StepComponent,
+    CustomerInformationComponent,
+    HousingInformationComponent
   ],
   imports: [
     BrowserModule,
