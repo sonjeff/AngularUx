@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +18,8 @@ import { HousingInformationComponent } from './components/housing-information/ho
     AppComponent,
     StepComponent,
     CustomerInformationComponent,
-    HousingInformationComponent
+    HousingInformationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,8 +31,8 @@ import { HousingInformationComponent } from './components/housing-information/ho
     NbSidebarModule, 
     NbButtonModule,
     NbStepperModule,
-    NbCardModule,
     NbThemeModule.forRoot(),
+    NbCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
