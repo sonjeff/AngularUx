@@ -21,6 +21,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule, } from '@angular/material/grid-list';
 import {FlexLayoutModule} from '@angular/flex-layout';
+
+import {TabViewModule} from 'primeng/tabview';
+
 import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -51,12 +54,22 @@ import { DiligenceInformationComponent } from './components/diligence-informatio
     FormsModule,
     StepsModule,
     ButtonModule,
-    CardModule,
+
+    NbTreeGridModule, 
+    NbTabsetModule,
+     MatCardModule,
+      MatToolbarModule, 
+      MatButtonModule, 
+      FlexLayoutModule, 
+      MatGridListModule,
+      TabViewModule,
+      CardModule,
     DropdownModule,
     CalendarModule,
     CheckboxModule,
     InputTextModule,
     NbTreeGridModule, NbTabsetModule, MatCardModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, MatGridListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
