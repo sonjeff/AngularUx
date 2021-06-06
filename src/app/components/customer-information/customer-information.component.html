@@ -1,77 +1,267 @@
-<div class="ui-g">
-  <div class="ui-g-2">
+<div class="p-grid">
+  <div class="p-col-2" style="text-align: center;">
     <button class="p-button-info" icon="pi pi-chevron-left" type="button" pButton pRipple (click)="backStep()"
-    styleClass="steps-custom"></button>
+      styleClass="steps-custom"></button>
   </div>
-  <div class="ui-g-8">
+  <div class="p-col-8">
     <p-steps [model]="steps" [(activeIndex)]="activeIndex" [readonly]="true" styleClass="steps-custom"></p-steps>
 
   </div>
-  <div class="ui-g-2">
+  <div class="p-col-2" style="text-align: center;">
     <button class="p-button-info" icon="pi pi-chevron-right" type="button" pButton pRipple (click)="nextStep()"
-    styleClass="steps-custom"></button>
+      styleClass="steps-custom"></button>
   </div>
 </div>
 
 
 <ng-container *ngIf="activeIndex==0">
-  <strong>Información del cliente</strong>
-
   <div class="p-grid">
-    <div class="p-col-12">
-      <div class="p-col-2">
-        Foto
-      </div>
-      <div class="p-col-10">
-        <div class="p-col-12">
-          <div class="p-col-6">
-            <span class="md-inputfield">
-              <label>Primer nombre</label>
-              <input pInputText [(ngModel)]="personalInformation.firstName" style="width:90%" />
-            </span>
-          </div>
-          <div class="p-col-6">
-            <span class="md-inputfield">
-              <label>Primer Apellido</label>
-              <input pInputText [(ngModel)]="personalInformation.lastName" style="width:90%" />
-            </span>
-          </div>
-          <div class="p-col-6">
-            <span class="md-inputfield">
-              <label>Segundo nombre</label>
-              <input pInputText [(ngModel)]="personalInformation.secondName" style="width:90%" />
-            </span>
-          </div>
-          <div class="p-col-6">
-            <span class="md-inputfield">
-              <label>Segundo Apellido</label>
-              <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
-            </span>
-          </div>
-
-        </div>
-        <div class="p-col-12">
-          <div class="p-col-10">
-            <div class="p-col-4">
-            </div>
-            <div class="p-col-8">
-            </div>
-          </div>
-          <div class="p-col-2">
-          </div>
-        </div>
-        <div class="p-col-12">
-
-        </div>
-      </div>
-
+    <div class="p-col-2">
+      <h1></h1>
     </div>
-    <div class="p-col">2</div>
-    <div class="p-col">3</div>
+    <div class="p-col-8">
+      <p-card>
+        
+
+        <div class="p-grid">
+          <div class="p-col-12">
+            <div class="p-col-2">
+              <img src="../../../assets/profile.png" width="150" height="250"/>
+            </div>
+            <div class="p-col-10">
+              <div class="p-col-12">
+                <strong>Información del cliente</strong>
+              </div>
+           
+              <div class="p-col-12">
+                <div class="p-col-6">
+                  <span class="md-inputfield">
+                    <label>Primer nombre</label>
+                    <input pInputText [(ngModel)]="personalInformation.firstName" style="width:90%" />
+                  </span>
+                </div>
+                <div class="p-col-6">
+                  <span class="md-inputfield">
+                    <label>Primer Apellido</label>
+                    <input pInputText [(ngModel)]="personalInformation.lastName" style="width:90%" />
+                  </span>
+                </div>
+                <div class="p-col-6">
+                  <span class="md-inputfield">
+                    <label>Segundo nombre</label>
+                    <input pInputText [(ngModel)]="personalInformation.secondName" style="width:90%" />
+                  </span>
+                </div>
+                <div class="p-col-6">
+                  <span class="md-inputfield">
+                    <label>Segundo Apellido</label>
+                    <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
+                  </span>
+                </div>
+
+              </div>
+              <div class="p-col-12">
+                <div class="p-col-10">
+                  <strong>
+                    Fecha y lugar de nacimiento
+                  </strong>
+                </div>
+                <div class="p-col-2">
+                  <strong>
+                    Extranjero
+                  </strong>
+                </div>
+              </div>
+              <div class="p-col-12">
+                <div class="p-col-4">
+                  <span class="p-float-label">
+                    <p-calendar [(ngModel)]="personalInformation.birthDate"  [monthNavigator]="true" [yearNavigator]="true"
+                      yearRange="1940:2025" [locale]="localeCalendar" ></p-calendar>
+                  </span>
+                </div>
+                <div class="p-col-6">
+                  <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                  appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                </p-dropdown>
+                </div>
+                <div class="p-col-2">
+                  <p-checkbox [(ngModel)]="personalInformation.isforeign" binary="true">
+                </p-checkbox>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="p-col-12">
+            <div class="p-col-12">
+              <strong>Fecha y lugar de expedición</strong>
+            </div>
+            <div class="p-col-12">
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                    <span class="p-float-label">
+                      <p-calendar [(ngModel)]="personalInformation.birthDate"  [monthNavigator]="true" [yearNavigator]="true"
+                        yearRange="1940:2025" [locale]="localeCalendar" ></p-calendar>
+                    </span>
+                  </div>
+                  <div class="p-col-6">
+                    <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                    appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                  </p-dropdown>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                  <strong>Género</strong>
+                  </div>
+                  <div class="p-col-6">
+                    <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                    appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                  </p-dropdown>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-col-12">
+            <div class="p-col-12">
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                   <strong>Educación:</strong>
+                  </div>
+                  <div class="p-col-6">
+                    <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                    appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                  </p-dropdown>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                  <strong>Estado civil</strong>
+                  </div>
+                  <div class="p-col-6">
+                    <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                    appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                  </p-dropdown>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        
+          <div class="p-col-12">
+            <div class="p-col-12">
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                   <strong>Email:</strong>
+                  </div>
+                  <div class="p-col-6">
+                    <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                    appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                  </p-dropdown>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                  <strong>Estrato</strong>
+                  </div>
+                  <div class="p-col-6">
+                    <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo" placeholder="Seleccione"
+                    appendTo="body" [style]="{'width': '100%'}"  filter="true">
+                  </p-dropdown>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="p-col-12">
+            <div class="p-col-12">
+              <strong>Cuantas personas en casa?</strong>
+            </div>
+            <div class="p-col-12">
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                    <div class="p-col-12">
+                      <label>Trabajan</label>
+                    </div>
+                    <div class="p-col-12">
+                      <span class="p-float-label">
+                        <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
+                      </span>
+                    </div>
+                   
+                  </div>
+                  <div class="p-col-6">
+                    <div class="p-col-12">
+                      <label>No trabajan</label>
+                    </div>
+                    <div class="p-col-12">
+                      <span class="p-float-label">
+                        <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="p-col-6">
+                <div class="p-col-12">
+                  <div class="p-col-6">
+                    <div class="p-col-12">
+                      <label>Hijos</label>
+                    </div>
+                    <div class="p-col-12">
+                      <span class="p-float-label">
+                        <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
+                      </span>
+                    </div>
+                   
+                  </div>
+                  <div class="p-col-6">
+                    <div class="p-col-12">
+                      <label>Personas a cargo</label>
+                    </div>
+                    <div class="p-col-12">
+                      <span class="p-float-label">
+                        <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </p-card>
+    </div>
+    <div class="p-col-2">
+      <h1></h1>
+    </div>
   </div>
+
+
 </ng-container>
 <ng-container *ngIf="activeIndex==1">
-
+  <app-housing-information>
+  </app-housing-information>
 </ng-container>
 
 <!-- <div class="p-grid">

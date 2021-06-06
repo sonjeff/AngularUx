@@ -21,7 +21,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule, } from '@angular/material/grid-list';
 import {FlexLayoutModule} from '@angular/flex-layout';
+
 import {TabViewModule} from 'primeng/tabview';
+
+import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
+import {CheckboxModule} from 'primeng/checkbox';
+import {InputTextModule} from 'primeng/inputtext';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +52,7 @@ import {TabViewModule} from 'primeng/tabview';
     FormsModule,
     StepsModule,
     ButtonModule,
+
     NbTreeGridModule, 
     NbTabsetModule,
      MatCardModule,
@@ -53,7 +61,13 @@ import {TabViewModule} from 'primeng/tabview';
       FlexLayoutModule, 
       MatGridListModule,
       TabViewModule,
-      CardModule
+      CardModule,
+    DropdownModule,
+    CalendarModule,
+    CheckboxModule,
+    InputTextModule,
+    NbTreeGridModule, NbTabsetModule, MatCardModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, MatGridListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
