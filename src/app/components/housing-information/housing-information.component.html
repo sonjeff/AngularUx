@@ -2,7 +2,7 @@
     <div class="p-col-3">
         <p-card [style]="{width: '560px', height: '760px'}">
             <h2>
-                <b>Vivienda</b>
+                <strong>Vivienda</strong>
             </h2>
             <div class="p-grid">
                 <div class="p-col-12">
@@ -58,40 +58,38 @@
                                 </div>
                             </div>
                         </p-tabPanel>
-
                     </p-tabView>
-
                 </div>
-
             </div>
-
             <div class="p-grid">
                 <div class="p-col-12">
                     <div class="p-col-5">
                         <span>Quieres buscar tu ubicación en el mapa?</span>
                         <br>
-                        <p-dialog header="Marca la posición mas cercana a ti" [(visible)]="displayi">
+                        <p-dialog header="Marca la posición más cercana a ti" [(visible)]="displayi">
 
-                            <strong> COORDENADAS: Latitud {{center['lat']}} Longitud: {{center['lng']}}</strong>
-                            <google-map width="500" height="500" [zoom]="zoomx1" [center]="realPosition" ></google-map>
+                            <strong> Sus Coordenadas son:
+                                <span style="font-size: medium;">
+                                    <span style="color:red;">LAT ({{center['lat']}}) LNG ({{center['lng']}})</span>
+                                </span>
+                            </strong>
+                            <google-map width="535" height="500" [zoom]="zoomx1" [center]="realPosition"></google-map>
                         </p-dialog>
                         <p-button label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
                     </div>
-
                     <div class="p-col-7">
                         <!--
                         <img src="../../../assets/maps.jpg" width="150" height="130" /> -->
                         <div class="p-col-12" *ngIf="mapedit">
-                            <google-map width="200" height="150" [zoom]="zoom" [center]="realPosition" ></google-map>
+                            <google-map width="200" height="150" [zoom]="zoom" [center]="realPosition"></google-map>
                         </div>
                         <div class="p-col-12" *ngIf="!mapedit">
-                            <google-map width="150" height="130" [zoom]="zoom" [center]="center" ></google-map>
+                            <google-map width="150" height="130" [zoom]="zoom" [center]="center"></google-map>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
-
             <div class="p-grid">
                 <div class="p-col-12">
                     <div class="p-col-5">
