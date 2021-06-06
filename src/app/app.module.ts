@@ -37,6 +37,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import {Locationservice} from './components/housing-information/location.service';
 import { PropertiesOrAssetsComponent } from './components/properties-or-assets/properties-or-assets.component';
 import {TableModule} from 'primeng/table';
+import { WorkingInformationComponent } from './components/working-information/working-information.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {TableModule} from 'primeng/table';
     HousingInformationComponent,
     DiligenceInformationComponent,
     PropertiesOrAssetsComponent,
+    WorkingInformationComponent,
 
 
   ],
