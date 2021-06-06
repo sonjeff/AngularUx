@@ -1,0 +1,129 @@
+<p-card [style]="{width: '560px', height: '560px'}">
+  <div class="p-col-12" style="padding: 0px; font-size: 15px;">
+    <div class="p-col-7">
+      <strong>Propiedades - bienes</strong>
+    </div>
+    <div class="p-col-2">
+      icono de carro
+    </div>
+    <div class="p-col-2">
+      icono de edificio
+    </div>
+    <div class="p-col-1" style="padding: 0px;">
+      <div class="circulo">
+      </div>
+    </div>
+  </div>
+  <div class="p-col-12" style="padding: 0px; color: #B0C4DE;">
+    ________________________________________________________________________________________________
+  </div>
+  <div class="p-col-12">
+    <div class="p-col-3">
+      Tipo de Inmueble
+    </div>
+    <div class="p-col-3">
+      <div class="p-col-9">
+        <strong>Departamento</strong>
+      </div>
+      <div class="p-col-3">
+        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      </div>
+    </div>
+    <div class="p-col-3">
+      <div class="p-col-6">
+        <strong>Local</strong>
+      </div>
+      <div class="p-col-6">
+        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      </div>
+    </div>
+    <div class="p-col-3">
+      <div class="p-col-6">
+        <strong>Casa</strong>
+      </div>
+      <div class="p-col-6">
+        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      </div>
+     
+    </div>
+
+  </div>
+  <div class="p-col-12">
+    <div class="p-col-6">
+      <div class="p-col-6">
+        <strong>Valor comercial</strong>
+      </div>
+      <div class="p-col-6">
+        <input pInputText [(ngModel)]="commercialValue" style="width:90%" />
+      </div>
+    </div>
+    <div class="p-col-6" style="text-align: right;">
+      <div class="p-col-4">
+      </div>
+      <div class="p-col-4">
+        <strong>Hipotecado</strong>
+      </div>
+      <div class="p-col-4">
+        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-12">
+
+    <div class="p-col-8">
+      <span>El bien está en la misma ciudad de residencia?</span>
+    </div>
+    <div class="p-col-4">
+      <div class="p-col-3">
+        <span>Si</span>
+      </div>
+      <div class="p-col-3" style="text-align: left;">
+        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      </div>
+      <div class="p-col-3">
+        <span>No</span>
+      </div>
+      <div class="p-col-3" style="text-align: left;">
+        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      </div>
+
+    </div>
+  </div>
+  <div class="p-col-12">
+    <p-table styleClass="p-datatable-customers p-datatable-gridlines p-datatable-striped" [columns]="columnsHeader"
+    [value]="goodsList" [style]="{'font-size':'12px'}" [responsive]="true" [paginator]="true"
+    [rowsPerPageOptions]="[5,10,50,100]" [lazy]="true" 
+    [totalRecords]="totalRecords" [rows]="rowPerPage" expandableRows="true" dataKey="loadf"
+    selectionMode="single">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columnsHeader" [style.width]="col.width">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-expanded="expanded" let-rowData let-index="rowIndex"
+        let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td>
+                <a href="#" [pRowToggler]="rowData">
+                    <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                </a>
+            </td>
+            <td>{{rowData.loadfi}}</td>
+            <td>{{rowData.code}}</td>
+            <td>{{rowData.channel}}</td>
+            <td>{{rowData.name}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+            <td [attr.colspan]="columnsHeader.length">
+                No hay resultados de la busqueda. Haga click en buscar.
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+  </div>
+
+</p-card>

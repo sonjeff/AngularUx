@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PersonalInformation } from 'src/app/Models/personalInformation';
 import { MenuItem, SelectItem } from 'primeng/api';
 
@@ -9,6 +9,7 @@ import { MenuItem, SelectItem } from 'primeng/api';
 })
 export class CustomerInformationComponent implements OnInit {
 
+  @Input() isMarried:boolean;
   personalInformation: PersonalInformation = new PersonalInformation();
   numberCombo: SelectItem[] = [];
   countryCombo: SelectItem[] = [];
@@ -16,15 +17,11 @@ export class CustomerInformationComponent implements OnInit {
   marriedCombo: SelectItem[] = [];
   estratoCombo:SelectItem[] = [];
   educationLevelCombo:SelectItem[] = [];
+  country2Combo:SelectItem[] = [];
 
   localeCalendar: any;
   processfileCombo: any;
 
-  //cOMBO DE GENERO
-  //COMBO DE ESTADO CIVIL
-  //COMBO DE SOLICITUDES
-  //COMBO DE EDUCACION
-  //Combo de ciudades
   //poner los next a los lados
 
   constructor() {
@@ -37,6 +34,8 @@ export class CustomerInformationComponent implements OnInit {
     const countryList= this.createCountryList();
     this.countryCombo=this.buildStringCombo(countryList);
 
+    const countryAuxList= this.createCountry2List();
+    this.country2Combo=this.buildStringCombo(countryAuxList);
     
     const genderList= this.createGenderList();
     this.genderCombo=this.buildStringCombo(genderList);
@@ -55,23 +54,29 @@ export class CustomerInformationComponent implements OnInit {
   }
   setData()
   {
-    this.personalInformation.firstName='Dagoberto';
-    this.personalInformation.secondName='Andres';
-    this.personalInformation.lastName='Carbona';
-    this.personalInformation.maternalName='Robledo';
-    this.personalInformation.birthDate=new Date();
-    this.personalInformation.country='Colombia-Antioquia';
-    this.personalInformation.expeditionDate=new Date();
-    this.personalInformation.expeditionCity='Colombia-Barranquilla';
-    this.personalInformation.gender='Masculino';
-    this.personalInformation.education='Secundaria';
-    this.personalInformation.email='gonzalo.proano@llacsaa.com';
-    this.personalInformation.civilstatus='Soltero';
-    this.personalInformation.stratum='Estrato 1';
-    this.personalInformation.dependents=1;
-    this.personalInformation.numberofchildren=0;
-    this.personalInformation.numberpersonWork=3;
-    this.personalInformation.numberpersonNotwork=1;
+    if(!this.isMarried)
+    {
+      this.personalInformation.firstName='Dagoberto';
+      this.personalInformation.secondName='Andres';
+      this.personalInformation.lastName='Carbona';
+      this.personalInformation.maternalName='Robledo';
+      this.personalInformation.birthDate=new Date();
+      this.personalInformation.country='Colombia-Antioquia';
+      this.personalInformation.expeditionDate=new Date();
+      this.personalInformation.expeditionCity='Barranquilla';
+      this.personalInformation.gender='Masculino';
+      this.personalInformation.education='Secundaria';
+      this.personalInformation.email='gonzalo.proano@llacsaa.com';
+      this.personalInformation.civilstatus='Soltero';
+      this.personalInformation.stratum='Estrato 1';
+      this.personalInformation.dependents=1;
+      this.personalInformation.numberofchildren=0;
+      this.personalInformation.numberpersonWork=3;
+      this.personalInformation.numberpersonNotwork=1;
+    }else{
+      this.personalInformation.civilstatus='Casado';
+    }
+  
 
   }
   createNumberList(): number[] {
@@ -86,6 +91,14 @@ export class CustomerInformationComponent implements OnInit {
     countryList.push("Colombia-Antioquia");
     countryList.push("Colombia-Barranquilla");
     countryList.push("Colombia-Boyacá");
+
+    return countryList;
+  }
+  createCountry2List(): string[] {
+    let countryList: string[] = [];
+    countryList.push("Antioquia");
+    countryList.push("Barranquilla");
+    countryList.push("Boyacá");
 
     return countryList;
   }
@@ -139,7 +152,7 @@ export class CustomerInformationComponent implements OnInit {
   }
   buidlNumberCombo(numberList: number[]): SelectItem[] {
     let combo: SelectItem[] = [];
-    combo = [{ label: 'N/A', value: null }];
+    combo = [{ label: '....', value: null }];
     numberList.forEach(item => {
       combo.push({
         label: item + "",
