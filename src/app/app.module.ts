@@ -13,23 +13,27 @@ import { NbSidebarModule, NbButtonModule } from '@nebular/theme';
 import { CustomerInformationComponent } from './components/customer-information/customer-information.component';
 import { HousingInformationComponent } from './components/housing-information/housing-information.component';
 import { FormsModule } from '@angular/forms';
-import {StepsModule} from 'primeng/steps';
-import {CardModule} from 'primeng/card';
-import {ButtonModule} from 'primeng/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule, } from '@angular/material/grid-list';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { StepsModule } from 'primeng/steps';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule, } from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import {TabViewModule} from 'primeng/tabview';
+import { TabViewModule } from 'primeng/tabview';
 
-import {CalendarModule} from 'primeng/calendar';
-import {DropdownModule} from 'primeng/dropdown';
-import {CheckboxModule} from 'primeng/checkbox';
-import {InputTextModule} from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { CheckboxModule } from 'primeng/checkbox';
+import { InputTextModule } from 'primeng/inputtext';
 import { DiligenceInformationComponent } from './components/diligence-information/diligence-information.component';
-import {DialogModule} from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
+
+//Módulo de GoogleMaps
+import { GoogleMapsModule } from '@angular/google-maps';
+import {Locationservice} from './components/housing-information/location.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,7 @@ import {DialogModule} from 'primeng/dialog';
     HousingInformationComponent,
     DiligenceInformationComponent,
 
-    
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ import {DialogModule} from 'primeng/dialog';
     BrowserAnimationsModule,
     NbLayoutModule,
     NbEvaIconsModule,
-    NbSidebarModule, 
+    NbSidebarModule,
     NbButtonModule,
     NbStepperModule,
     NbThemeModule.forRoot(),
@@ -56,30 +60,31 @@ import {DialogModule} from 'primeng/dialog';
     StepsModule,
     ButtonModule,
 
-    NbTreeGridModule, 
+    NbTreeGridModule,
     NbTabsetModule,
-     MatCardModule,
-      MatToolbarModule, 
-      MatButtonModule, 
-      FlexLayoutModule, 
-      MatGridListModule,
-      TabViewModule,
-      CardModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatGridListModule,
+    TabViewModule,
+    CardModule,
     DropdownModule,
     CalendarModule,
     CheckboxModule,
     InputTextModule,
-    NbTreeGridModule, 
+    NbTreeGridModule,
     NbTabsetModule,
-     MatCardModule, 
-     MatToolbarModule,
-      MatButtonModule, 
-      FlexLayoutModule, 
-      MatGridListModule,
-      DialogModule
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatGridListModule,
+    DialogModule,
+    GoogleMapsModule
 
   ],
-  providers: [],
+  providers: [Locationservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
