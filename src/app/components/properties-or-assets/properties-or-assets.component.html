@@ -4,10 +4,11 @@
       <strong>Propiedades - bienes</strong>
     </div>
     <div class="p-col-2">
-      icono de carro
+      <button pButton pRipple type="button" icon="ui-icon-directions-car" class="p-button-rounded p-button-outlined"></button>
     </div>
     <div class="p-col-2">
-      icono de edificio
+      <button pButton pRipple type="button" icon="ui-icon-directions-car" class="p-button-rounded p-button-outlined"></button>
+     
     </div>
     <div class="p-col-1" style="padding: 0px;">
       <div class="circulo">
@@ -17,7 +18,7 @@
   <div class="p-col-12" style="padding: 0px; color: #B0C4DE;">
     ________________________________________________________________________________________________
   </div>
-  <div class="p-col-12">
+  <div class="p-col-12" style="padding: 0px;">
     <div class="p-col-3">
       Tipo de Inmueble
     </div>
@@ -26,7 +27,7 @@
         <strong>Departamento</strong>
       </div>
       <div class="p-col-3">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="departamentType" [(ngModel)]="propertyType"></p-radioButton>
       </div>
     </div>
     <div class="p-col-3">
@@ -34,27 +35,27 @@
         <strong>Local</strong>
       </div>
       <div class="p-col-6">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="localType" [(ngModel)]="propertyType"></p-radioButton>
       </div>
     </div>
     <div class="p-col-3">
       <div class="p-col-6">
         <strong>Casa</strong>
       </div>
-      <div class="p-col-6">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      <div class="p-col-6" style="text-align: right;">
+        <p-radioButton name="city" value="homeType" [(ngModel)]="propertyType"></p-radioButton>
       </div>
      
     </div>
 
   </div>
-  <div class="p-col-12">
+  <div class="p-col-12" style="padding: 0px;">
     <div class="p-col-6">
       <div class="p-col-6">
         <strong>Valor comercial</strong>
       </div>
       <div class="p-col-6">
-        <input pInputText [(ngModel)]="commercialValue" style="width:90%" />
+        <input pInputText [(ngModel)]="commercialValue" style="width:95%" />
       </div>
     </div>
     <div class="p-col-6" style="text-align: right;">
@@ -64,12 +65,11 @@
         <strong>Hipotecado</strong>
       </div>
       <div class="p-col-4">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-checkbox [(ngModel)]="ismortgaged" binary="true"> </p-checkbox>
       </div>
     </div>
   </div>
-  <div class="p-col-12">
-
+  <div class="p-col-12" style="padding: 0px;">
     <div class="p-col-8">
       <span>El bien está en la misma ciudad de residencia?</span>
     </div>
@@ -78,13 +78,13 @@
         <span>Si</span>
       </div>
       <div class="p-col-3" style="text-align: left;">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="sameCityReference" [(ngModel)]="propertyType"></p-radioButton>
       </div>
       <div class="p-col-3">
         <span>No</span>
       </div>
-      <div class="p-col-3" style="text-align: left;">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+      <div class="p-col-3" style="text-align: right;">
+        <p-radioButton name="city" value="notsameCityReference" [(ngModel)]="propertyType"></p-radioButton>
       </div>
 
     </div>
@@ -96,24 +96,58 @@
     [totalRecords]="totalRecords" [rows]="rowPerPage" expandableRows="true" dataKey="loadf"
     selectionMode="single">
     <ng-template pTemplate="header" let-columns>
-        <tr>
-            <th *ngFor="let col of columnsHeader" [style.width]="col.width">
+        <tr style="padding: 0px !important;">
+            <th *ngFor="let col of columnsHeader" [style.width]="col.width" >
                 {{col.header}}
             </th>
         </tr>
+        <tr>
+          <th>
+            <button class="p-button-info" type="button" pButton pRipple icon="pi pi-plus" style="float:right; width: 100%;"
+            (click)="addProperties()"></button>
+          </th>
+          <th>
+            <input pInputText [(ngModel)]="tipo" style="width:90%" placeholder="Tipo"/>
+          </th>
+          <th>
+            <input pInputText [(ngModel)]="departament" style="width:90%" placeholder="Departamento"/>
+          </th>
+          <th>
+            <input pInputText [(ngModel)]="country" style="width:90%" placeholder="ciudad"/>
+          </th>
+          <th>
+            <input pInputText [(ngModel)]="commercialValueSearch" style="width:90%" placeholder="Valor comercial"/>
+          </th>
+          <th>
+            <input pInputText [(ngModel)]="mortgaged" style="width:90%" placeholder="Si/No"/>
+          </th>
+      </tr>
     </ng-template>
     <ng-template pTemplate="body" let-expanded="expanded" let-rowData let-index="rowIndex"
         let-columns="columns">
-        <tr [pSelectableRow]="rowData">
-            <td>
-                <a href="#" [pRowToggler]="rowData">
-                    <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
-                </a>
+        <tr>
+            <td style="padding: 0px;">
+              <div class="p-col-12" style="padding: 0px;">
+                <div class="p-col-5" style="padding: 0px; text-align: center;">
+                 <td>
+                  <button pButton pRipple type="button" class="p-button-raised p-button-secondary p-button-text"
+                  (click)="save()" icon="pi pi-check"></button>
+                 </td> 
+                </div>
+               
+                <div class="p-col-5" style="padding: 0px; text-align: center;">
+                  <td>
+                    <button pButton pRipple type="button" class="p-button-raised p-button-secondary p-button-text"
+                    (click)="remove(rowData, index)" icon="pi pi-trash"></button>
+                  </td> 
+                </div>
+              </div>
             </td>
-            <td>{{rowData.loadfi}}</td>
-            <td>{{rowData.code}}</td>
-            <td>{{rowData.channel}}</td>
-            <td>{{rowData.name}}</td>
+            <td>{{rowData.tipo}}</td>
+            <td>{{rowData.departamento}}</td>
+            <td>{{rowData.ciudad}}</td>
+            <td>{{rowData.valorComercial}}</td>
+            <td>{{rowData.hipoteca}}</td>
         </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage" let-columns>
