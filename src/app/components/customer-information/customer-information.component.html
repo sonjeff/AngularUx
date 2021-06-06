@@ -1,22 +1,26 @@
 <div class="p-grid">
   <div class="p-col-12">
     <p-card [style]="{width: '560px', height: '560px'}">
-      <div class="p-col-12">
-        <div class="p-col-8">
+      <div class="p-col-12" style="padding: 0px; font-size: 15px;">
+        <div class="p-col-7">
           <strong>Información del cliente</strong>
         </div>
         <div class="p-col-4">
           <span>CÉDULA - 1723353403</span>
         </div>
+        <div class="p-col-1" style="padding: 0px;">
+          <div class="circulo">
+          </div>
+        </div>
       </div>
-  
+
       <!-- Información del cliente -->
-      <div class="p-col-12">
+      <div class="p-col-12" style="padding: 0px;">
         <div class="p-col-3">
           <div class="p-col-12">
             <img src="../../../assets/profile.png" width="100" height="120" />
           </div>
-       
+
         </div>
         <div class="p-col-9">
           <div class="p-col-12" style="padding: 0px;">
@@ -28,13 +32,13 @@
             </div>
             <div class="p-col-6" style="padding: 0px;">
               <span class="md-inputfield" style="padding: 0px;">
-                <input pInputText [(ngModel)]="personalInformation.lastName" style="width:90%" />
+                <input pInputText [(ngModel)]="personalInformation.secondName" style="width:90%" />
                 <!-- <label>Primer Apellido</label> -->
               </span>
             </div>
             <div class="p-col-6" style="padding: 0px; padding-top: 10px;">
               <span class="md-inputfield">
-                <input pInputText [(ngModel)]="personalInformation.secondName" style="width:90%" />
+                <input pInputText [(ngModel)]="personalInformation.lastName" style="width:90%" />
                 <!-- <label>Segundo nombre</label> -->
               </span>
             </div>
@@ -65,8 +69,9 @@
               </span>
             </div>
             <div class="p-col-6" style="padding: 0px; padding-right: 10px;">
-              <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
-                placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
+              <p-dropdown [(ngModel)]="personalInformation.country" [options]="countryCombo"
+                placeholder="Seleccione" appendTo="body" [style]="{'width': '100%', 'padding':'0px !important'}"
+                filter="true">
               </p-dropdown>
             </div>
             <div class="p-col-2" style="padding: 0px; text-align: center;">
@@ -75,6 +80,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="p-col-12" style="padding: 0px; color: #B0C4DE;">
+        ________________________________________________________________________________________________
       </div>
 
       <!-- Fecha y lugar de expedicion -->
@@ -87,12 +96,12 @@
             <div class="p-col-12" style="padding: 0px;">
               <div class="p-col-6" style="padding: 0px; padding-right: 10px; ">
                 <span class="p-float-label">
-                  <p-calendar [(ngModel)]="personalInformation.birthDate" [monthNavigator]="true" [yearNavigator]="true"
+                  <p-calendar [(ngModel)]="personalInformation.expeditionDate" [monthNavigator]="true" [yearNavigator]="true"
                     yearRange="1940:2025" [locale]="localeCalendar"></p-calendar>
                 </span>
               </div>
               <div class="p-col-6" style="padding: 0px; padding-right: 10px;">
-                <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
+                <p-dropdown [(ngModel)]="personalInformation.expeditionCity" [options]="countryCombo"
                   placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
                 </p-dropdown>
               </div>
@@ -104,26 +113,26 @@
               <div class="p-col-6" style="padding: 0px;">
                 <strong>Género</strong>
               </div>
-              <div class="p-col-6" style="padding: 0px; " >
-                <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
+              <div class="p-col-6" style="padding: 0px; ">
+                <p-dropdown [(ngModel)]="personalInformation.gender" [options]="genderCombo"
                   placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
                 </p-dropdown>
               </div>
             </div>
           </div>
-          <div class="p-col-12">
+          <div class="p-col-12" style="padding: 0px;">
             <div class="p-col-6" style="padding: 0px;">
               <div class="p-col-12" style="padding: 0px;">
                 <div class="p-col-6" style="padding: 0px;">
                   <strong>Educación:</strong>
                 </div>
-                <div class="p-col-6" style="padding: 0px; padding-right: 10px;">
-                  <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
+                <div class="p-col-6" style="padding: 0px; padding-right: 10px; padding-top: 7px;">
+                  <p-dropdown [(ngModel)]="personalInformation.education" [options]="educationLevelCombo"
                     placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
                   </p-dropdown>
                 </div>
               </div>
-  
+
             </div>
             <div class="p-col-6" style="padding: 0px;">
               <div class="p-col-12" style="padding: 0px;">
@@ -131,7 +140,7 @@
                   <strong>Estado civil</strong>
                 </div>
                 <div class="p-col-6" style="padding: 0px;">
-                  <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
+                  <p-dropdown [(ngModel)]="personalInformation.civilstatus" [options]="marriedCombo"
                     placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
                   </p-dropdown>
                 </div>
@@ -146,20 +155,18 @@
                 <strong>Email:</strong>
               </div>
               <div class="p-col-6" style="padding: 0px; padding-right: 10px;;">
-                <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
-                  placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
-                </p-dropdown>
+                <input pInputText [(ngModel)]="personalInformation.email" style="width:90%" />
               </div>
             </div>
 
           </div>
-          <div class="p-col-6">
+          <div class="p-col-6" style="padding: 0px;">
             <div class="p-col-12" style="padding: 0px;">
               <div class="p-col-6" style="padding: 0px;">
                 <strong>Estrato</strong>
               </div>
               <div class="p-col-6" style="padding: 0px;">
-                <p-dropdown [(ngModel)]="personalInformation.country" [options]="processfileCombo"
+                <p-dropdown [(ngModel)]="personalInformation.stratum" [options]="estratoCombo"
                   placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
                 </p-dropdown>
               </div>
@@ -168,59 +175,86 @@
         </div>
       </div>
 
+      <div class="p-col-12" style="padding: 0px; color: #B0C4DE;">
+        ________________________________________________________________________________________________
+      </div>
+
       <!-- Cuantas personas en casa? -->
       <div class="p-col-12">
         <div class="p-col-12">
           <strong>Cuantas personas en casa?</strong>
         </div>
-        <div class="p-col-12">
-          <div class="p-col-6">
-            <div class="p-col-12">
-              <div class="p-col-6">
-                <div class="p-col-12">
+        <div class="p-col-12" style="padding: 0px;">
+          <div class="p-col-6" style="padding: 0px;">
+            <div class="p-col-12" style="padding: 0px;">
+              <div class="p-col-3" style="padding: 0px;">
+                <div class="p-col-12" style="padding: 0px;">
                   <label>Trabajan</label>
                 </div>
-                <div class="p-col-12">
-                  <span class="p-float-label">
-                    <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
-                  </span>
-                </div>
+                <div class="p-col-12" style="padding: 0px;">
 
+                  <p-dropdown [(ngModel)]="personalInformation.numberpersonWork" [options]="numberCombo"
+                    placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
+                  </p-dropdown>
+
+                </div>
               </div>
-              <div class="p-col-6">
-                <div class="p-col-12">
+              <div class="p-col-1" style="padding: 0px;">
+              </div>
+              <div class="p-col-3" style="padding: 0px;">
+                <div class="p-col-12" style="padding: 0px;">
                   <label>No trabajan</label>
                 </div>
-                <div class="p-col-12">
-                  <span class="p-float-label">
-                    <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
-                  </span>
+                <div class="p-col-12" style="padding: 0px;">
+
+                  <p-dropdown [(ngModel)]="personalInformation.numberpersonNotwork" [options]="numberCombo"
+                    placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
+                  </p-dropdown>
+
+                </div>
+              </div>
+              <div class="p-col-1" style="padding: 0px;">
+              </div>
+              <div class="p-col-3" style="padding: 0px;">
+                <div class="p-col-12" style="padding: 0px;">
+                  <label>Total</label>
+                </div>
+              
+                <div class="p-col-12" style="padding: 0px; padding-top: 10px;">
+                  <strong>{{personalInformation.totalWork}}</strong>
                 </div>
               </div>
             </div>
 
           </div>
-          <div class="p-col-6">
-            <div class="p-col-12">
-              <div class="p-col-6">
-                <div class="p-col-12">
+          <div class="p-col-6" style="padding: 0px;">
+            <div class="p-col-12" style="padding: 0px;">
+              <div class="p-col-6" style="padding: 0px;">
+                <div class="p-col-12" style="padding: 0px;">
                   <label>Hijos</label>
                 </div>
-                <div class="p-col-12">
-                  <span class="p-float-label">
-                    <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
-                  </span>
+                <div class="p-col-12" style="padding: 0px;">
+
+                  <div class="p-col-8" style="padding: 0px;">
+                    <p-dropdown [(ngModel)]="personalInformation.numberofchildren" [options]="numberCombo"
+                      placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
+                    </p-dropdown>
+                  </div>
+
+
                 </div>
 
               </div>
-              <div class="p-col-6">
-                <div class="p-col-12">
+              <div class="p-col-6" style="padding: 0px;">
+                <div class="p-col-12" style="padding: 0px;">
                   <label>Personas a cargo</label>
                 </div>
-                <div class="p-col-12">
-                  <span class="p-float-label">
-                    <input pInputText [(ngModel)]="personalInformation.maternalName" style="width:90%" />
-                  </span>
+                <div class="p-col-12" style="padding: 0px;">
+                  <div class="p-col-8" style="padding: 0px;">
+                    <p-dropdown [(ngModel)]="personalInformation.dependents" [options]="numberCombo"
+                      placeholder="Seleccione" appendTo="body" [style]="{'width': '100%'}" filter="true">
+                    </p-dropdown>
+                  </div>
                 </div>
               </div>
             </div>
