@@ -70,14 +70,16 @@
                     <div class="p-col-5">
                         <span>Quieres buscar tu ubicación en el mapa?</span>
                         <br>
-                        <p-dialog header="Ubicación" [(visible)]="display">
-                            <h1>HOLA MUNDO</h1>
+                        <p-dialog header="Ubicación" [(visible)]="displayi">
+                            <h1>Sus coordenadas son: Latitud {{center['lat']}} Longitud: {{center['lng']}}</h1>
                         </p-dialog>
-                        <p-button label="Mapa" (click)="showDialog()"></p-button>
+                        <p-button label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
                     </div>
 
                     <div class="p-col-7">
-                        <img src="../../../assets/maps.jpg" width="150" height="130" />
+                        <!--
+                        <img src="../../../assets/maps.jpg" width="150" height="130" /> -->
+                        <google-map width="150" height="130" [zoom]="zoom" [center]="center" ></google-map>
                     </div>
                 </div>
             </div>

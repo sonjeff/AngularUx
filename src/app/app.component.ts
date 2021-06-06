@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +7,16 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
 
-  edit: boolean;
   
-  constructor(private route: Router ){
-    this.edit=this.edit;
+  
+  constructor( ){
+   
 
   }
 
-  change(){
-    this.edit =!this.edit;
-    this.route.navigate(['step']);
-  }
+  center={lat: 10000000, lng:-2000000};
+  zoom= 15;
+  //display?:google.maps.LatLngLiteral;
+
+ 
 }
