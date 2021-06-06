@@ -1,70 +1,77 @@
-<div class="card">
-    <h2>Vivienda</h2>
-    <nb-card>
-
-        <nb-card-body>
-    
-            <nb-tabset>
-                <nb-tab tabTitle="Propia">
-                    <div class="p-gird">
-                        <div layout="row">
-                            <div flex>
-                                <input type="text" class="text" placeholder="Calle principal">
+<div class="p-grid">
+    <div class="p-grid-12">
+        <p-card >
+            <h2>
+                <b>Vivienda</b>
+            </h2>
+            <div class="p-grid">
+                <div class="p-col-12">
+                    <p-tabView>
+                        <p-tabPanel header="Propia">
+                            <div class="p-col-12">
+                                <div class="p-col-7" >
+                                    <input type="text" class="text" placeholder="Calle Principal">
+                                </div>
+                                <div class="p-col-3" >
+                                    <input type="text" class="text" placeholder="Número">
+                                </div>
                             </div>
-                            <div flex>
-                                <input type="text" class="text" placeholder="Número">
+                            <br>
+                            <div class="p-col-12">
+                                <div class="p-col-7" >
+                                    <input type="text" class="text" placeholder="Calle secundaría">
+                                </div>
+                                <div class="p-col-3" >
+                                    <input type="text" class="text" placeholder="ZipCode">
+                                </div>
                             </div>
-                        </div>
-                        <div layout="row">
-                            <div flex>
-                                <input type="text" class="text" placeholder="Calle secundaria">
+                            <br>
+                            <div class="p-col-12">
+                                <div class="p-col-10" >
+                                    <input type="text" class="text" placeholder="Referencia">
+                                </div>
                             </div>
-                            <div flex>
-                                <input type="text" class="text" placeholder="ZipCode">
-                            </div>
-                        </div>
-                        <div layout="row">
-                            <div flex>
-                                <input type="text" class="text" placeholder="Referencia">
-                            </div>
-                        </div>
-                    </div>
-                </nb-tab>
-                <nb-tab tabTitle="Arrendada">
-                    <div class="p-gird">
-                        <div layout="row">
-                            <div flex>
-                                <input type="text" class="text" placeholder="Calle principal!">
-                            </div>
-
-                            <div flex >
-                                <input type="text" class="text" placeholder="Número">
-                            </div>
-                        </div>
-                        <div layout="row">
-                            <div flex>
-                                <input type="text" class="text" placeholder="Calle secundaria">
-                            </div>
-                            <div flex>
-                                <input type="text" class="text" placeholder="ZipCode">
-                            </div>
-                        </div>
-                        <div layout="column">
-                            <div flex>
-                                <input type="text" class="text" placeholder="Referencia">
-                            </div>
-                        </div>
-                    </div>
-                  
-                </nb-tab>
-            </nb-tabset>
-<!-- Mapa-->
-            <div>
-
-            </div>
+                        </p-tabPanel>
             
-        </nb-card-body>
+                        <p-tabPanel header="Arriendo">
+                            <div class="p-col-12">
+                                <div class="p-grid-12" flex>
+                                    <div class="p-col-7" flex>
+                                        <input type="text" class="text" placeholder="Calle Principal">
+                                    </div>
+                                    <div class="p-col-3" flex>
+                                        <input type="text" class="text" placeholder="Número">
+                                    </div>
+                                </div>
+                                <div class="p-grid-12" flex>
+                                    <div class="p-col-7" flex>
+                                        <input type="text" class="text" placeholder="Calle secundaría">
+                                    </div>
+                                    <div class="p-col-3" flex>
+                                        <input type="text" class="text" placeholder="ZipCode">
+                                    </div>
+                                </div>
+                                <div class="p-grid-12" flex>
+                                    <div class="p-col-10" flex>
+                                        <input type="text" class="text" placeholder="Referencia">
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </p-tabPanel>
+            
+                    </p-tabView>
+            
+                </div>
+                
+            </div>
+        
+        </p-card>
+
+    </div>
     
-    </nb-card>
 
 </div>
+
+    
+

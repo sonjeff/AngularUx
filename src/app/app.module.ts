@@ -21,7 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule, } from '@angular/material/grid-list';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
+import {TabViewModule} from 'primeng/tabview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     FormsModule,
     StepsModule,
     ButtonModule,
-    NbTreeGridModule, NbTabsetModule, MatCardModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, MatGridListModule
+    NbTreeGridModule, 
+    NbTabsetModule,
+     MatCardModule,
+      MatToolbarModule, 
+      MatButtonModule, 
+      FlexLayoutModule, 
+      MatGridListModule,
+      TabViewModule,
+      CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
