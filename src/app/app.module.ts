@@ -34,6 +34,7 @@ import { DialogModule } from 'primeng/dialog';
 //Módulo de GoogleMaps
 import { GoogleMapsModule } from '@angular/google-maps';
 import {Locationservice} from './components/housing-information/location.service';
+import { WorkingInformationComponent } from './components/working-information/working-information.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {Locationservice} from './components/housing-information/location.service
     CustomerInformationComponent,
     HousingInformationComponent,
     DiligenceInformationComponent,
+    WorkingInformationComponent,
 
 
   ],

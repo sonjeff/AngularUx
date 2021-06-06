@@ -70,8 +70,10 @@
                     <div class="p-col-5">
                         <span>Quieres buscar tu ubicación en el mapa?</span>
                         <br>
-                        <p-dialog header="Ubicación" [(visible)]="displayi">
-                            <h1>Sus coordenadas son: Latitud {{center['lat']}} Longitud: {{center['lng']}}</h1>
+                        <p-dialog header="Marca la posición mas cercana a ti" [(visible)]="displayi">
+
+                            <strong> COORDENADAS: Latitud {{center['lat']}} Longitud: {{center['lng']}}</strong>
+                            <google-map width="500" height="500" [zoom]="zoomx1" [center]="realPosition" ></google-map>
                         </p-dialog>
                         <p-button label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
                     </div>
@@ -79,7 +81,13 @@
                     <div class="p-col-7">
                         <!--
                         <img src="../../../assets/maps.jpg" width="150" height="130" /> -->
-                        <google-map width="150" height="130" [zoom]="zoom" [center]="center" ></google-map>
+                        <div class="p-col-12" *ngIf="mapedit">
+                            <google-map width="200" height="150" [zoom]="zoom" [center]="realPosition" ></google-map>
+                        </div>
+                        <div class="p-col-12" *ngIf="!mapedit">
+                            <google-map width="150" height="130" [zoom]="zoom" [center]="center" ></google-map>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
