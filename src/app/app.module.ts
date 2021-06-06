@@ -28,6 +28,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
+import { DiligenceInformationComponent } from './components/diligence-information/diligence-information.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {InputTextModule} from 'primeng/inputtext';
     StepComponent,
     CustomerInformationComponent,
     HousingInformationComponent,
+    DiligenceInformationComponent,
 
     
   ],
