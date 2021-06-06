@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HousingInformationComponent implements OnInit {
 
-  constructor() { }
+  display:boolean;
+  options=[];
+  dat:String;
+  selectedValues: string[] = ['val1','val2'];
+
+  constructor() {
+    this.options=['MEFIA','PACÍFICO','PICHINCHA'];
+   }
 
   ngOnInit(): void {
   }
 
+  showDialog() {
+    this.display = true;
+    
+}
 }

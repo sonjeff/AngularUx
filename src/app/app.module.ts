@@ -29,6 +29,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import { DiligenceInformationComponent } from './components/diligence-information/diligence-information.component';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,14 @@ import { DiligenceInformationComponent } from './components/diligence-informatio
     CalendarModule,
     CheckboxModule,
     InputTextModule,
-    NbTreeGridModule, NbTabsetModule, MatCardModule, MatToolbarModule, MatButtonModule, FlexLayoutModule, MatGridListModule
+    NbTreeGridModule, 
+    NbTabsetModule,
+     MatCardModule, 
+     MatToolbarModule,
+      MatButtonModule, 
+      FlexLayoutModule, 
+      MatGridListModule,
+      DialogModule
 
   ],
   providers: [],
