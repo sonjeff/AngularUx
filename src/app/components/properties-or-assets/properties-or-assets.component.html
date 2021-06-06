@@ -27,7 +27,7 @@
         <strong>Departamento</strong>
       </div>
       <div class="p-col-3">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="departamentType" [(ngModel)]="propertyType"></p-radioButton>
       </div>
     </div>
     <div class="p-col-3">
@@ -35,7 +35,7 @@
         <strong>Local</strong>
       </div>
       <div class="p-col-6">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="localType" [(ngModel)]="propertyType"></p-radioButton>
       </div>
     </div>
     <div class="p-col-3">
@@ -43,7 +43,7 @@
         <strong>Casa</strong>
       </div>
       <div class="p-col-6" style="text-align: right;">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="homeType" [(ngModel)]="propertyType"></p-radioButton>
       </div>
      
     </div>
@@ -65,7 +65,7 @@
         <strong>Hipotecado</strong>
       </div>
       <div class="p-col-4">
-        <p-checkbox [(ngModel)]="propertyType" binary="true"> </p-checkbox>
+        <p-checkbox [(ngModel)]="ismortgaged" binary="true"> </p-checkbox>
       </div>
     </div>
   </div>
@@ -78,13 +78,13 @@
         <span>Si</span>
       </div>
       <div class="p-col-3" style="text-align: left;">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="sameCityReference" [(ngModel)]="propertyType"></p-radioButton>
       </div>
       <div class="p-col-3">
         <span>No</span>
       </div>
       <div class="p-col-3" style="text-align: right;">
-        <p-radioButton name="city" value="propertyType" [(ngModel)]="propertyType"></p-radioButton>
+        <p-radioButton name="city" value="notsameCityReference" [(ngModel)]="propertyType"></p-radioButton>
       </div>
 
     </div>
@@ -107,34 +107,35 @@
             (click)="addProperties()"></button>
           </th>
           <th>
-            <input pInputText [(ngModel)]="commercialValue" style="width:90%" placeholder="Tipo"/>
+            <input pInputText [(ngModel)]="tipo" style="width:90%" placeholder="Tipo"/>
           </th>
           <th>
-            <input pInputText [(ngModel)]="commercialValue" style="width:90%" placeholder="Departamento"/>
+            <input pInputText [(ngModel)]="departament" style="width:90%" placeholder="Departamento"/>
           </th>
           <th>
-            <input pInputText [(ngModel)]="commercialValue" style="width:90%" placeholder="ciudad"/>
+            <input pInputText [(ngModel)]="country" style="width:90%" placeholder="ciudad"/>
           </th>
           <th>
-            <input pInputText [(ngModel)]="commercialValue" style="width:90%" placeholder="Valor comercial"/>
+            <input pInputText [(ngModel)]="commercialValueSearch" style="width:90%" placeholder="Valor comercial"/>
           </th>
           <th>
-            <input pInputText [(ngModel)]="commercialValue" style="width:90%" placeholder="Si/No"/>
+            <input pInputText [(ngModel)]="mortgaged" style="width:90%" placeholder="Si/No"/>
           </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-expanded="expanded" let-rowData let-index="rowIndex"
         let-columns="columns">
         <tr>
-            <td>
+            <td style="padding: 0px;">
               <div class="p-col-12" style="padding: 0px;">
-                <div class="p-col-6" style="padding: 0px;">
+                <div class="p-col-5" style="padding: 0px; text-align: center;">
                  <td>
                   <button pButton pRipple type="button" class="p-button-raised p-button-secondary p-button-text"
                   (click)="save()" icon="pi pi-check"></button>
                  </td> 
                 </div>
-                <div class="p-col-6" style="padding: 0px;">
+               
+                <div class="p-col-5" style="padding: 0px; text-align: center;">
                   <td>
                     <button pButton pRipple type="button" class="p-button-raised p-button-secondary p-button-text"
                     (click)="remove(rowData, index)" icon="pi pi-trash"></button>

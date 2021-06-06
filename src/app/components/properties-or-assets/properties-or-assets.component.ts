@@ -8,12 +8,27 @@ import { Component, OnInit } from '@angular/core';
 export class PropertiesOrAssetsComponent implements OnInit {
 
   propertyType: string;
-  commercialValue: string;
+  commercialValue: number;
   goodsList: any[] = [];
   columnsHeader: any[] = [];
 
   rowPerPage: number;
   totalRecords: number;
+
+  //Campos de busqueda
+  mortgaged:string;
+  country:string;
+  departament:string;
+  tipo:string;
+
+  //Tipo de vivienda
+  departamentType:string;
+  localType:string;
+  homeType:string;
+
+  ismortgaged:boolean;
+  sameCityReference:boolean;
+  notsameCityReference:boolean;
 
   constructor() { }
 
@@ -23,6 +38,7 @@ export class PropertiesOrAssetsComponent implements OnInit {
 
     this.setColumns();
     this.createList();
+    this.commercialValue=80000000 ;
   }
 
   setColumns() {
