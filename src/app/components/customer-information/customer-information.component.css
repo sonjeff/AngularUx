@@ -1,0 +1,9 @@
+.circulo {
+    width: 18px;
+    height: 18px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #5cb85c;
+    padding: 0px;
+}

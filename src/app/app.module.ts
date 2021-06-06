@@ -30,10 +30,13 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { DiligenceInformationComponent } from './components/diligence-information/diligence-information.component';
 import { DialogModule } from 'primeng/dialog';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 //Módulo de GoogleMaps
 import { GoogleMapsModule } from '@angular/google-maps';
 import {Locationservice} from './components/housing-information/location.service';
+import { PropertiesOrAssetsComponent } from './components/properties-or-assets/properties-or-assets.component';
+import {TableModule} from 'primeng/table';
 import { WorkingInformationComponent } from './components/working-information/working-information.component';
 
 @NgModule({
@@ -43,6 +46,7 @@ import { WorkingInformationComponent } from './components/working-information/wo
     CustomerInformationComponent,
     HousingInformationComponent,
     DiligenceInformationComponent,
+    PropertiesOrAssetsComponent,
     WorkingInformationComponent,
 
 
@@ -83,7 +87,9 @@ import { WorkingInformationComponent } from './components/working-information/wo
     FlexLayoutModule,
     MatGridListModule,
     DialogModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    RadioButtonModule,
+    TableModule
 
   ],
   providers: [Locationservice],

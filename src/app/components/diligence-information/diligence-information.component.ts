@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, SelectItem } from 'primeng/api';
 import { PersonalInformation } from 'src/app/Models/personalInformation';
 
 @Component({
@@ -14,11 +14,20 @@ export class DiligenceInformationComponent implements OnInit {
   activeIndex: number = 0;
   personalInformation: PersonalInformation = new PersonalInformation();
   items: MenuItem[];
-  sss:any;
+
+
+  requestCombo: SelectItem[] = [];
+  requestSelected:string;
+
   constructor() { }
 
   ngOnInit() {
     this.setSteps();
+
+    const requestList= this.createRequestList();
+    this.requestCombo=this.buildStringCombo(requestList);
+
+    this.requestSelected='0000000002349189';
   }
 
   // COMPONENTE ETAPAS
@@ -115,5 +124,25 @@ export class DiligenceInformationComponent implements OnInit {
     }
 
     return isValid;
+  }
+  buildStringCombo(list:string[])
+  {
+    let combo: SelectItem[] = [];
+    combo = [{ label: 'Seleccione', value: null }];
+    list.forEach(item => {
+      combo.push({
+        label: item + "",
+        value: item
+      });
+    });
+    return combo;
+  }
+  createRequestList(): string[] {
+    let countryList: string[] = [];
+    countryList.push("0000000002349189");
+    countryList.push("0000000002349190");
+    countryList.push("0000000002349191");
+
+    return countryList;
   }
 }

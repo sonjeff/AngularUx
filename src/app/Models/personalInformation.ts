@@ -12,7 +12,7 @@ export class PersonalInformation {
 
     //Fecha y lugar de expedicion
     expeditionDate: Date;
-    expeditionCity: Date;
+    expeditionCity: string;
     education: string;
     email: string;
     gender: string;
