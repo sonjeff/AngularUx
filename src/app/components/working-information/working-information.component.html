@@ -1,1 +1,77 @@
-<p>working-information works!</p>
+<p-card [style]="{width: '560px', height: '560px'}">
+
+    <div class="p-col-12" style="padding: 0px; font-size: 15px;">
+        <div class="p-col-7">
+            <strong>Información Laboral</strong>
+        </div>
+    </div>
+
+    <div class="p-col-12">
+        <div class="p-col-6">
+            <label for="rs">Razón social/Nombre</label>
+        </div>
+    </div>
+    <div class="p-col-12" style="padding: 0px;">
+        <div class="p-col-11">
+            <input pInputText type="text" id="rs" value="Escribe tu razón social/nombre" style="width: 100%;">
+        </div>
+    </div>
+    <div class="p-col-12">
+        <div class="p-col-6">
+            <label for="ocupation">Ocupación</label>
+        </div>
+    </div>
+    <div class="p-col-12">
+        <div class="p-col-6">
+            <p-dropdown [options]="options" placeholder="tipo.."></p-dropdown>
+        </div>
+        <div class="p-col-5">
+            <span>Trabaja en el mismo lugar de la residencia?</span>
+        </div>
+    </div>
+    <div class="p-col-12">
+        <div class="p-col-6">
+            <label for="ciudad">Ciudad</label>
+        </div>
+    </div>
+    <div class="p-col-12">
+        <div class="p-col-6">
+            <input pInputText type="text" id="ciudad" value="Escribe tu ciudad" style="width: 100%;">
+        </div>
+        <div class="p-col-5">
+            <div class="p-col-12">
+                <div class="p-col-3">
+                    <strong>Si</strong>
+                </div>
+                <div class="p-col-3">
+                    <p-checkbox value=""></p-checkbox>
+                </div>
+                <div class="p-col-3">
+                    <strong>No</strong>
+                </div>
+                <div class="p-col-3">
+                    <p-checkbox value=""></p-checkbox>
+                </div>
+            </div>
+        </div>
+        <div class="p-col-12">
+            <div class="p-col-6">
+                <label for="if">Información Financiera</label>
+            </div>
+        </div>
+        <div class="p-col-12">
+            <div class="p-col-3">
+                <strong>Total ingresos</strong>
+            </div>
+            <div class="p-col-2">
+                <input pInputText type="text" value="$0" style="width: 70%;">
+            </div>
+            <div class="p-col-3">
+                <strong>Total egresos</strong>
+            </div>
+            <div class="p-col-2">
+                <input pInputText type="text" value="$0" style="width: 70%;">
+            </div>
+        </div>
+    </div>
+</p-card>
