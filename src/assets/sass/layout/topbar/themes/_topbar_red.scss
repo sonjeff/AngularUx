@@ -1,0 +1,13 @@
+.layout-topbar-cyan {
+    $topbarBgColor: #da2229;
+    $topbarLeftBgColor: #b12227;
+
+    $topbarMenuButtonBgColor:#ffc107;
+    $topbarMenuButtonTextColor:#212121;
+
+    $topbarItemTextColor: #ffffff;
+    $topbarItemTextHoverBgColor: rgba(255,255,255,.12);
+
+    @import '../_topbar_exports';
+    @import '../_topbar_theme';
+}
