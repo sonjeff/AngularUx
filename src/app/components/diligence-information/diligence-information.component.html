@@ -1,6 +1,42 @@
-
-
 <div class="card clearfix">
+
+  <!--
+  <nb-card>
+    <nb-card-body>
+      <nb-stepper orientation="horizontal">
+        <nb-step [label]="labelOne">
+          <ng-template #labelOne>Solicitante</ng-template>
+          
+          <p class="lorem">
+            
+          </p>
+          <button pButton nbStepperNext style="margin-right: 10px;">prev</button>
+          <button pButton nbStepperNext>next</button>
+        </nb-step>
+        <nb-step [label]="labelTwo">
+          <ng-template #labelTwo>Amparados</ng-template>
+          
+          <p class="lorem">
+            
+          </p>
+          <button pButton styleClass="steps-custom" pButton nbStepperPrevious style="margin-right: 10px;">prev</button>
+          <button pButton styleClass="steps-custom" pButton nbStepperNext>next</button>
+        </nb-step>
+        <nb-step label="Third step">
+          <ng-template #laberlThree>Documentos</ng-template>
+          <p class="lorem">
+            
+          </p>
+          <button pButton styleClass="steps-custom" pButton nbStepperPrevious
+            style="margin-right: 10px;">prev</button>
+          <button pButton styleClass="steps-custom" pButton nbStepperNext>next</button>
+
+
+        </nb-step>
+      </nb-stepper>
+    </nb-card-body>
+  </nb-card> -->
+
   <div class="p-grid">
     <div class="p-col-2" style="text-align: center;">
       <br>
@@ -10,12 +46,12 @@
         <button class="p-button-info" icon="pi pi-chevron-left" type="button" pButton pRipple (click)="backStep()"
           styleClass="steps-custom"></button>
       </div>
-  
+
     </div>
     <div class="p-col-8">
       <div class="p-col-12"></div>
       <p-steps [model]="steps" [(activeIndex)]="activeIndex" [readonly]="true" styleClass="steps-custom"></p-steps>
-  
+
     </div>
     <div class="p-col-2" style="text-align: center;">
       <div class="p-col-12">
@@ -30,19 +66,19 @@
         <button class="p-button-info" icon="pi pi-chevron-right" type="button" pButton pRipple (click)="nextStep()"
           styleClass="steps-custom"></button>
       </div>
-  
+
     </div>
   </div>
-  
-  
+
+
   <ng-container *ngIf="activeIndex==0">
-  
+
     <!-- Listado de cards -->
     <div class="p-grid">
       <div class="p-col-1" style="padding: 0px; width: 6% !important;">
       </div>
       <div class="p-col-3">
-  
+
         <!-- Card 1 -->
         <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
           style="width: 100% !important; padding: 0px;" (click)="openCard('1')" label=" ">
@@ -71,14 +107,14 @@
               </p-card>
             </div>
           </div>
-  
+
         </button>
-  
-  
+
+
         <br>
-  
+
         <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
-          style="width: 100% !important; padding: 0px;" (click)="openCard('2')" label=" ">
+          style="width: 100% !important; padding: 0px;" (click)="openCard('3')" label=" ">
           <div class="p-grid" style="width: 100%;">
             <div class="p-col-12">
               <!-- Card2 -->
@@ -96,18 +132,18 @@
                   </div>
                 </ng-template>
                 <div class="p-col-12" style="padding: 0px;">
-  
+
                 </div>
               </p-card>
             </div>
           </div>
         </button>
-  
-  
+
+
         <br>
-  
+
         <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
-          style="width: 100% !important; padding: 0px;" (click)="openCard('3')" label=" ">
+          style="width: 100% !important; padding: 0px;" (click)="openCard('2')" label=" ">
           <div class="p-grid" style="width: 100%;">
             <div class="p-col-12">
               <p-card [style]="{width: '100%'}" click="openCard()">
@@ -124,17 +160,17 @@
                   </div>
                 </ng-template>
                 <div class="p-col-12" style="padding: 0px;">
-  
+
                 </div>
               </p-card>
             </div>
           </div>
         </button>
-  
+
         <!-- Card3 -->
-  
+
         <br>
-  
+
         <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
           style="width: 100% !important; padding: 0px;" (click)="openCard('4')" label=" ">
           <div class="p-grid" style="width: 100%;">
@@ -154,7 +190,7 @@
                   </div>
                 </ng-template>
                 <div class="p-col-12" style="padding: 0px;">
-  
+
                 </div>
               </p-card>
             </div>
@@ -180,22 +216,22 @@
         <!-- </div> -->
       </div>
     </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- <div class="p-grid">
       <div class="p-col-2">
       </div>
@@ -224,11 +260,11 @@
   
   
     </div> -->
-  
+
   </ng-container>
-  
+
   <ng-container *ngIf="activeIndex==1">
-  
+
   </ng-container>
 
 
