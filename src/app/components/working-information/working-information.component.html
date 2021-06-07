@@ -1,4 +1,4 @@
-<p-card [style]="{width: '560px', height: '560px'}">
+<p-card [style]="{width: '560px', height: '420px'}">
 
     <div class="p-col-12" style="padding: 0px; font-size: 15px;">
         <div class="p-col-7">
@@ -8,7 +8,7 @@
 
     <div class="p-col-12">
         <div class="p-col-6">
-            <label for="rs">Razón social/Nombre</label>
+            <strong for="rs">Razón social/Nombre</strong>
         </div>
     </div>
     <div class="p-col-12" style="padding: 0px;">
@@ -16,27 +16,17 @@
             <input pInputText type="text" id="rs" value="Escribe tu razón social/nombre" style="width: 100%;">
         </div>
     </div>
-    <div class="p-col-12">
+    <div class="p-col-12" style="padding:0px;">
         <div class="p-col-6">
-            <label for="ocupation">Ocupación</label>
+            <strong for="ocupation">Ocupación</strong>
+        </div>
+        <div class="p-col-6">
+            <strong>Trabaja en el mismo lugar de la residencia?</strong>
         </div>
     </div>
-    <div class="p-col-12">
+    <div class="p-col-12" style="padding:0px;">
         <div class="p-col-6">
             <p-dropdown [options]="options" placeholder="tipo.."></p-dropdown>
-        </div>
-        <div class="p-col-5">
-            <span>Trabaja en el mismo lugar de la residencia?</span>
-        </div>
-    </div>
-    <div class="p-col-12">
-        <div class="p-col-6">
-            <label for="ciudad">Ciudad</label>
-        </div>
-    </div>
-    <div class="p-col-12">
-        <div class="p-col-6">
-            <input pInputText type="text" id="ciudad" value="Escribe tu ciudad" style="width: 100%;">
         </div>
         <div class="p-col-5">
             <div class="p-col-12">
@@ -44,33 +34,44 @@
                     <strong>Si</strong>
                 </div>
                 <div class="p-col-3">
-                    <p-checkbox value=""></p-checkbox>
+                    <p-radioButton name="groupname" value="val2" [(ngModel)]="selectedValue1"></p-radioButton>
                 </div>
                 <div class="p-col-3">
                     <strong>No</strong>
                 </div>
                 <div class="p-col-3">
-                    <p-checkbox value=""></p-checkbox>
+                    <p-radioButton name="groupname" value="val1" [(ngModel)]="selectedValue"></p-radioButton>
                 </div>
             </div>
         </div>
-        <div class="p-col-12">
-            <div class="p-col-6">
-                <label for="if">Información Financiera</label>
+    </div>
+    <div class="p-col-12" style="padding:0px;">
+        <div class="p-col-6">
+            <strong for="ciudad">Ciudad</strong>
+        </div>
+    </div>
+    <div class="p-col-12" style="padding:0px;">
+        <div class="p-col-6">
+            <input pInputText type="text" id="ciudad" value="Escribe tu ciudad" style="width: 90%;">
+        </div>
+
+        <div class="p-col-12" style="padding: 0px; font-size: 15px;">
+            <div class="p-col-7">
+                <strong for="if">Información Financiera</strong>
             </div>
         </div>
-        <div class="p-col-12">
-            <div class="p-col-3">
+        <div class="p-col-12" style="padding:0px;">
+            <div class="p-col-3" style="padding-top:0px;">
                 <strong>Total ingresos</strong>
             </div>
-            <div class="p-col-2">
-                <input pInputText type="text" value="$0" style="width: 70%;">
+            <div class="p-col-2" style="padding:0px;">
+                <input pInputText type="text" value="$0" style="width: 100%;" >
             </div>
-            <div class="p-col-3">
+            <div class="p-col-3" style="padding-top:0px;">
                 <strong>Total egresos</strong>
             </div>
-            <div class="p-col-2">
-                <input pInputText type="text" value="$0" style="width: 70%;">
+            <div class="p-col-2" style="padding:0px;">
+                <input pInputText type="text" value="$0" style="width: 100%;">
             </div>
         </div>
     </div>
