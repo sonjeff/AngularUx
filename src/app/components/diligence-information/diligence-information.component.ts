@@ -166,14 +166,14 @@ export class DiligenceInformationComponent implements OnInit {
       // this.showhousingInformation=false;
       // this.showPropertiesandAssets=false;
     }
-    if(id=='2')
+    if(id=='3')
     {
       // this.showpersonalInformation=false;
       this.showworkingInformation=true;
       // this.showhousingInformation=false;
       // this.showPropertiesandAssets=false;
     }
-    if(id=='3')
+    if(id=='2')
     {
       // this.showpersonalInformation=false;
       // this.showworkingInformation=false;

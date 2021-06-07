@@ -78,16 +78,21 @@
             </div>
 
         </div>
-        <div class="p-col-6" style="padding: 0px;">
+
+        <div class="p-col-6" >
             <div class="p-col-12" >
-                <p-card>
-                    <div class="p-col-12" *ngIf="mapedit" >
-                        <google-map width="225" height="110" [zoom]="zoom" [center]="realPosition"></google-map>
-                    </div>
-                    <div class="p-col-12" *ngIf="!mapedit" >
-                        <google-map width="225px" height= "110px" [zoom]="zoom" [center]="center"></google-map>
-                    </div>
-                </p-card>
+                <!--
+                <p-card [style]="{width: '225px', height: '87px'}">
+                    
+                </p-card> -->
+
+                <div class="p-col-12" *ngIf="mapedit" >
+                    <google-map width="225" height="87px" [zoom]="zoom" [center]="realPosition"></google-map>
+                </div>
+                <div class="p-col-12" *ngIf="!mapedit" >
+                    <google-map width="225px" height= "87px" [zoom]="zoom" [center]="center"></google-map>
+                </div>
+
             </div>
         </div>
         <!--DIALOG-->
@@ -108,6 +113,7 @@
                         <img src="../../../assets/maps.jpg" width="150" height="130" /> -->
         </div>
     </div>
+
     <div class="p-col-12">
         <div class="p-col-6">
             <span style="width:100%"><b>Teléfono</b></span>
