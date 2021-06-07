@@ -24,8 +24,11 @@ export class DiligenceInformationComponent implements OnInit {
   showworkingInformation:boolean;
   showhousingInformation:boolean;
   showPropertiesandAssets:boolean;
+  checked:boolean;
 
-  constructor() { }
+  constructor() {
+    this.checked=false;
+   }
 
   ngOnInit() {
     this.setSteps();
@@ -34,6 +37,7 @@ export class DiligenceInformationComponent implements OnInit {
     this.requestCombo=this.buildStringCombo(requestList);
 
     this.requestSelected='0000000002349189';
+    
   }
 
   // COMPONENTE ETAPAS
@@ -154,32 +158,33 @@ export class DiligenceInformationComponent implements OnInit {
   openCard(id:string)
   {
     console.log('Abrio la  card');
+    console.log('valor de checked',this.checked)
     if(id=='1')
     {
       this.showpersonalInformation=true;
-      this.showworkingInformation=false;
-      this.showhousingInformation=false;
-      this.showPropertiesandAssets=false;
+      // this.showworkingInformation=false;
+      // this.showhousingInformation=false;
+      // this.showPropertiesandAssets=false;
     }
     if(id=='2')
     {
-      this.showpersonalInformation=false;
+      // this.showpersonalInformation=false;
       this.showworkingInformation=true;
-      this.showhousingInformation=false;
-      this.showPropertiesandAssets=false;
+      // this.showhousingInformation=false;
+      // this.showPropertiesandAssets=false;
     }
     if(id=='3')
     {
-      this.showpersonalInformation=false;
-      this.showworkingInformation=false;
+      // this.showpersonalInformation=false;
+      // this.showworkingInformation=false;
       this.showhousingInformation=true;
-      this.showPropertiesandAssets=false;
+      // this.showPropertiesandAssets=false;
     }
     if(id=='4')
     {
-      this.showpersonalInformation=false;
-      this.showworkingInformation=false;
-      this.showhousingInformation=false;
+      // this.showpersonalInformation=false;
+      // this.showworkingInformation=false;
+      // this.showhousingInformation=false;
       this.showPropertiesandAssets=true;
     }
   }

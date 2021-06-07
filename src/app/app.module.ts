@@ -42,6 +42,8 @@ import {TableModule} from 'primeng/table';
 import { WorkingInformationComponent } from './components/working-information/working-information.component';
 import {MatIconModule} from '@angular/material/icon';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ProgressCircleComponent } from './components/progress-circle/progress-circle.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import DriveEtaIcon from '@material-ui/icons/DriveEta';
     DiligenceInformationComponent,
     PropertiesOrAssetsComponent,
     WorkingInformationComponent,
+    ProgressCircleComponent,
 
 
   ],
@@ -94,7 +97,8 @@ import DriveEtaIcon from '@material-ui/icons/DriveEta';
     GoogleMapsModule,
     RadioButtonModule,
     TableModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule
 
   ],
   providers: [Locationservice],
