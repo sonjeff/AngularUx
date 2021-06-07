@@ -1,70 +1,235 @@
-<div class="p-grid">
-  <div class="p-col-2" style="text-align: center;">
-    <br>
-    <br>
-    <div class="p-col-12"></div>
-    <div class="p-col-12">
-      <button class="p-button-info" icon="pi pi-chevron-left" type="button" pButton pRipple (click)="backStep()"
-        styleClass="steps-custom"></button>
-    </div>
-
-  </div>
-  <div class="p-col-8">
-    <div class="p-col-12"></div>
-    <p-steps [model]="steps" [(activeIndex)]="activeIndex" [readonly]="true" styleClass="steps-custom"></p-steps>
-
-  </div>
-  <div class="p-col-2" style="text-align: center;">
-    <div class="p-col-12">
-      <label>Número de solicitud</label>
-      <span class="md-inputfield">
-        <p-dropdown [(ngModel)]="requestSelected" [options]="requestCombo" placeholder="Seleccione" appendTo="body"
-          [style]="{'width': '100%'}" filter="true">
-        </p-dropdown>
-      </span>
-    </div>
-    <div class="p-col-12">
-      <button class="p-button-info" icon="pi pi-chevron-right" type="button" pButton pRipple (click)="nextStep()"
-        styleClass="steps-custom"></button>
-    </div>
-
-  </div>
-</div>
 
 
-<ng-container *ngIf="activeIndex==0">
-
+<div class="card clearfix">
   <div class="p-grid">
-    <div class="p-col-2">
+    <div class="p-col-2" style="text-align: center;">
+      <br>
+      <br>
+      <div class="p-col-12"></div>
+      <div class="p-col-12">
+        <button class="p-button-info" icon="pi pi-chevron-left" type="button" pButton pRipple (click)="backStep()"
+          styleClass="steps-custom"></button>
+      </div>
+  
     </div>
-    <div class="p-col-4" style="padding-left: 40px;">
-      <app-customer-information></app-customer-information>
+    <div class="p-col-8">
+      <div class="p-col-12"></div>
+      <p-steps [model]="steps" [(activeIndex)]="activeIndex" [readonly]="true" styleClass="steps-custom"></p-steps>
+  
     </div>
-    <div class="p-col-1">
+    <div class="p-col-2" style="text-align: center;">
+      <div class="p-col-12">
+        <label>Número de solicitud</label>
+        <span class="md-inputfield">
+          <p-dropdown [(ngModel)]="requestSelected" [options]="requestCombo" placeholder="Seleccione" appendTo="body"
+            [style]="{'width': '100%'}" filter="true">
+          </p-dropdown>
+        </span>
+      </div>
+      <div class="p-col-12">
+        <button class="p-button-info" icon="pi pi-chevron-right" type="button" pButton pRipple (click)="nextStep()"
+          styleClass="steps-custom"></button>
+      </div>
+  
     </div>
-    <div class="p-col-5">
-      <app-housing-information></app-housing-information>
-    </div>
-    <div class="p-col-2">
-    </div>
-    <div class="p-col-4" style="padding-left: 40px;">
-      <working-information></working-information>
-    </div>
-    <div class="p-col-1">
-    </div>
-    <div class="p-col-5">
-      <app-properties-or-assets></app-properties-or-assets>
-    </div>
-
-    <div class="p-col-4" style="padding-left: 40px;">
-      <app-customer-information [isMarried]="true"></app-customer-information>
-    </div>
-
-
   </div>
+  
+  
+  <ng-container *ngIf="activeIndex==0">
+  
+    <!-- Listado de cards -->
+    <div class="p-grid">
+      <div class="p-col-1" style="padding: 0px; width: 6% !important;">
+      </div>
+      <div class="p-col-3">
+  
+        <!-- Card 1 -->
+        <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
+          style="width: 100% !important; padding: 0px;" (click)="openCard('1')" label=" ">
+          <div class="p-grid" style="width: 100%;">
+            <div class="p-col-12">
+              <p-card [style]="{width: '100% !important'}" click="openCard()">
+                <ng-template pTemplate="header" style="padding: 0px;">
+                  <div class="p-col-8" style="text-align: left;">
+                    <div class="p-col-12" style="font-size: 15px;">
+                      <strong>Datos personales</strong>
+                    </div>
+                    <div class="p-col-12">
+                      <span>CÉDULA - 1723353403 </span>
+                    </div>
+                  </div>
+                  <div class="p-col-4" style="padding: 0px;">
+                  </div>
+                </ng-template>
+                <div class="p-col-12" style="padding: 0px;">
+                  <div class="p-col-4">
+                    <img src="../../../assets/profile.png" width="60%" height="60%" />
+                  </div>
+                  <div class="p-col-8">
+                  </div>
+                </div>
+              </p-card>
+            </div>
+          </div>
+  
+        </button>
+  
+  
+        <br>
+  
+        <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
+          style="width: 100% !important; padding: 0px;" (click)="openCard('2')" label=" ">
+          <div class="p-grid" style="width: 100%;">
+            <div class="p-col-12">
+              <!-- Card2 -->
+              <p-card [style]="{width: '100%'}" click="openCard()">
+                <ng-template pTemplate="header" style="padding: 0px;">
+                  <div class="p-col-8" style="text-align: left;">
+                    <div class="p-col-12">
+                      <strong>Infomación laboral</strong>
+                    </div>
+                    <div class="p-col-12">
+                      <span>INDEPENDIENTE FORMAL </span>
+                    </div>
+                  </div>
+                  <div class="p-col-4" style="padding: 0px;">
+                  </div>
+                </ng-template>
+                <div class="p-col-12" style="padding: 0px;">
+  
+                </div>
+              </p-card>
+            </div>
+          </div>
+        </button>
+  
+  
+        <br>
+  
+        <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
+          style="width: 100% !important; padding: 0px;" (click)="openCard('3')" label=" ">
+          <div class="p-grid" style="width: 100%;">
+            <div class="p-col-12">
+              <p-card [style]="{width: '100%'}" click="openCard()">
+                <ng-template pTemplate="header" style="padding: 0px;">
+                  <div class="p-col-8" style="text-align: left;">
+                    <div class="p-col-12">
+                      <strong>Vivienda</strong>
+                    </div>
+                    <div class="p-col-12">
+                      <span>Medellin - Antioquia </span>
+                    </div>
+                  </div>
+                  <div class="p-col-4" style="padding: 0px;">
+                  </div>
+                </ng-template>
+                <div class="p-col-12" style="padding: 0px;">
+  
+                </div>
+              </p-card>
+            </div>
+          </div>
+        </button>
+  
+        <!-- Card3 -->
+  
+        <br>
+  
+        <button type="button" pButton pRipple type="button" class="p-button-secondary p-button-text"
+          style="width: 100% !important; padding: 0px;" (click)="openCard('4')" label=" ">
+          <div class="p-grid" style="width: 100%;">
+            <div class="p-col-12">
+              <!-- Card4 -->
+              <p-card [style]="{width: '100%'}" click="openCard()">
+                <ng-template pTemplate="header" style="padding: 0px;">
+                  <div class="p-col-8" style="text-align: left;">
+                    <div class="p-col-12">
+                      <strong>Propiedades y bienes</strong>
+                    </div>
+                    <div class="p-col-12">
+                      <span>Medellin - Antioquia </span>
+                    </div>
+                  </div>
+                  <div class="p-col-4" style="padding: 0px;">
+                  </div>
+                </ng-template>
+                <div class="p-col-12" style="padding: 0px;">
+  
+                </div>
+              </p-card>
+            </div>
+          </div>
+        </button>
 
-</ng-container>
+        <br>
+      </div>
+      <div class="p-col-8">
+        <!-- <div class="p-col-12"> -->
+        <div class="p-col" *ngIf="showpersonalInformation">
+          <app-customer-information></app-customer-information>
+        </div>
+        <div class="p-col" *ngIf="showworkingInformation">
+          <app-housing-information></app-housing-information>
+        </div>
+        <div class="p-col" *ngIf="showhousingInformation">
+          <working-information></working-information>
+        </div>
+        <div class="p-col" *ngIf="showPropertiesandAssets">
+          <app-properties-or-assets></app-properties-or-assets>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <!-- <div class="p-grid">
+      <div class="p-col-2">
+      </div>
+      <div class="p-col-4" style="padding-left: 40px;">
+     
+      </div>
+      <div class="p-col-1">
+      </div>
+      <div class="p-col-5">
+       
+      </div>
+      <div class="p-col-2">
+      </div>
+      <div class="p-col-4" style="padding-left: 40px;">
+       
+      </div>
+      <div class="p-col-1">
+      </div>
+      <div class="p-col-5">
+   
+      </div>
+  
+      <div class="p-col-4" style="padding-left: 40px;">
+        <app-customer-information [isMarried]="true"></app-customer-information>
+      </div>
+  
+  
+    </div> -->
+  
+  </ng-container>
+  
+  <ng-container *ngIf="activeIndex==1">
+  
+  </ng-container>
 
-<ng-container *ngIf="activeIndex==1">
 
-</ng-container>
+</div>

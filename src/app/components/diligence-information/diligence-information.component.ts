@@ -19,6 +19,12 @@ export class DiligenceInformationComponent implements OnInit {
   requestCombo: SelectItem[] = [];
   requestSelected:string;
 
+  //Mostrar
+  showpersonalInformation:boolean;
+  showworkingInformation:boolean;
+  showhousingInformation:boolean;
+  showPropertiesandAssets:boolean;
+
   constructor() { }
 
   ngOnInit() {
@@ -144,5 +150,37 @@ export class DiligenceInformationComponent implements OnInit {
     countryList.push("0000000002349191");
 
     return countryList;
+  }
+  openCard(id:string)
+  {
+    console.log('Abrio la  card');
+    if(id=='1')
+    {
+      this.showpersonalInformation=true;
+      this.showworkingInformation=false;
+      this.showhousingInformation=false;
+      this.showPropertiesandAssets=false;
+    }
+    if(id=='2')
+    {
+      this.showpersonalInformation=false;
+      this.showworkingInformation=true;
+      this.showhousingInformation=false;
+      this.showPropertiesandAssets=false;
+    }
+    if(id=='3')
+    {
+      this.showpersonalInformation=false;
+      this.showworkingInformation=false;
+      this.showhousingInformation=true;
+      this.showPropertiesandAssets=false;
+    }
+    if(id=='4')
+    {
+      this.showpersonalInformation=false;
+      this.showworkingInformation=false;
+      this.showhousingInformation=false;
+      this.showPropertiesandAssets=true;
+    }
   }
 }
