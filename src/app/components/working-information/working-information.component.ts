@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkingInformationComponent implements OnInit {
 
+  selectedValue=['val1','val2'];
+  selectedValue1=['val1','val2'];
+
   options=['COMERCIANTE','EMPRESARIO','DESEMPLEADO'];
 
   constructor() { }

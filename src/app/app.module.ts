@@ -32,6 +32,8 @@ import { DiligenceInformationComponent } from './components/diligence-informatio
 import { DialogModule } from 'primeng/dialog';
 import {RadioButtonModule} from 'primeng/radiobutton';
 
+
+
 //Módulo de GoogleMaps
 import { GoogleMapsModule } from '@angular/google-maps';
 import {Locationservice} from './components/housing-information/location.service';

@@ -1,143 +1,148 @@
-<div class="p-grid">
-    <div class="p-col-3">
-        <p-card [style]="{width: '560px', height: '760px'}">
-            <h2>
-                <strong>Vivienda</strong>
-            </h2>
-            <div class="p-grid">
-                <div class="p-col-12">
-                    <p-tabView>
-                        <p-tabPanel header="Propia">
-                            <div class="p-col-12">
-                                <div class="p-col-7">
-                                    <input pInputText type="text" placeholder="Calle Principal">
-                                </div>
+<p-card [style]="{width: '560px', height: '560px'}">
+    <div class="p-col-12" style="padding: 0px; font-size: 15px;">
+        <div class="p-col-7">
+            <strong>Vivienda:</strong>
+        </div>
 
-                                <div class="p-col-3">
-                                    <input pInputText type="text" placeholder="Número">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="p-col-12">
-                                <div class="p-col-7">
-                                    <input pInputText pInputText type="text" placeholder="Calle secundaría">
-                                </div>
-                                <div class="p-col-3">
-                                    <input pInputText pInputText type="text" placeholder="ZipCode">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="p-col-12">
-                                <div class="p-col-9">
-                                    <input pInputText type="text" placeholder="Referencia" style="width:120%">
-                                </div>
-                            </div>
-                        </p-tabPanel>
-                        <p-tabPanel header="Arriendo">
-                            <div class="p-col-12">
-                                <div class="p-col-7">
-                                    <input pInputText type="text" placeholder="Calle Principal">
-                                </div>
-                                <div class="p-col-3">
-                                    <input pInputText type="text" placeholder="Número">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="p-grid-12">
-                                <div class="p-col-7">
-                                    <input pInputText type="text" placeholder="Calle secundaría">
-                                </div>
-                                <div class="p-col-3" flex>
-                                    <input pInputText type="text" placeholder="ZipCode">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="p-grid-12" flex>
-                                <div class="p-col-9" flex>
-                                    <input pInputText type="text" placeholder="Referencia" style="width:120%">
-                                </div>
-                            </div>
-                        </p-tabPanel>
-                    </p-tabView>
-                </div>
-            </div>
-            <div class="p-grid">
-                <div class="p-col-12">
-                    <div class="p-col-5">
-                        <span>Quieres buscar tu ubicación en el mapa?</span>
-                        <br>
-                        <p-dialog header="Marca la posición más cercana a ti" [(visible)]="displayi">
+        <p-tabView>
 
-                            <strong> Sus Coordenadas son:
-                                <span style="font-size: medium;">
-                                    <span style="color:red;">LAT ({{center['lat']}}) LNG ({{center['lng']}})</span>
-                                </span>
-                            </strong>
-                            <google-map width="535" height="500" [zoom]="zoomx1" [center]="realPosition"></google-map>
-                        </p-dialog>
-                        <p-button label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
+            <p-tabPanel header="Propia">
+                <div class="p-col-12" style="padding:0px">
+                    <div class="p-col-8">
+                        <input pInputText type="text" placeholder="Calle Principal" style="width: 100%;">
                     </div>
-                    <div class="p-col-7">
-                        <!--
-                        <img src="../../../assets/maps.jpg" width="150" height="130" /> -->
-                        <div class="p-col-12" *ngIf="mapedit">
-                            <google-map width="200" height="150" [zoom]="zoom" [center]="realPosition"></google-map>
-                        </div>
-                        <div class="p-col-12" *ngIf="!mapedit">
-                            <google-map width="150" height="130" [zoom]="zoom" [center]="center"></google-map>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-            <div class="p-grid">
-                <div class="p-col-12">
-                    <div class="p-col-5">
-                        <span><b>Teléfono</b></span>
-                    </div>
-                    <div class="p-col-1"></div>
-                    <div class="p-col-5">
-                        <span><b>Correspondencia</b></span>
-                    </div>
-                </div>
-                <br>
-                <div class="p-col-12">
-                    <div class="p-col-5">
-                        <input pInputText type="text" placeholder="Celular">
-                    </div>
-                    <div class="p-col-5">
-                        <p-dropdown [options]="options" [(ngModel)]="dat" placeholder="tipo.."></p-dropdown>
-                    </div>
-                </div>
-                <br>
-                <div class="p-col-12">
-                    <div class="p-col-5">
-                        <input pInputText type="text" placeholder="Convencional">
-                    </div>
-                    <div class="p-col-5">
-                        <input pInputText type="text" placeholder="Correo electrónico">
+                    <div class="p-col-2">
+                        <input pInputText type="text" placeholder="Número">
                     </div>
                 </div>
 
-            </div>
-            <div class="p-pgrid">
-                <div class="p-col-12">
-                    <div class="p-col-7">
-                        <span>Desea recibir notificaciones importantes acerca de beneficios y promiciones</span>
+                <div class="p-col-12" style="padding:0px">
+                    <div class="p-col-8">
+                        <input pInputText pInputText type="text" placeholder="Calle secundaría" style="width: 100%;">
                     </div>
                     <div class="p-col-2">
-
-                    </div>
-                    <div class="p-col-2">
-                        <p-checkbox value="" [(ngModel)]="selectedValues"></p-checkbox>
-
+                        <input pInputText pInputText type="text" placeholder="ZipCode">
                     </div>
                 </div>
-            </div>
 
-        </p-card>
+                <div class="p-col-12" style="padding:0px">
+                    <div class="p-col-12">
+                        <input pInputText type="text" placeholder="Referencia" style="width:102%">
+                    </div>
+                </div>
+            </p-tabPanel>
 
+            <p-tabPanel header="Arriendo">
+                <div class="p-col-12" style="padding:0px">
+                    <div class="p-col-8">
+                        <input pInputText type="text" placeholder="Calle Principal" style="width: 100%;">
+                    </div>
+                    <div class="p-col-2">
+                        <input pInputText type="text" placeholder="Número" >
+                    </div>
+                </div>
+
+                <div class="p-grid-12" style="padding:0px">
+                    <div class="p-col-8">
+                        <input pInputText type="text" placeholder="Calle secundaría" style="width: 100%;">
+                    </div>
+                    <div class="p-col-2" flex>
+                        <input pInputText type="text" placeholder="ZipCode">
+                    </div>
+                </div>
+
+                <div class="p-grid-12" style="padding:0px">
+                    <div class="p-col-12">
+                        <input pInputText type="text" placeholder="Referencia" style="width:102%">
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
     </div>
 
 
-</div>
+    <div class="p-col-12" style="padding-top: 0px;">
+        <div class="p-col-6" style="padding-top: 0px ;">
+            <div class="p-col-12" style="padding-top:0px;">
+                <div class="p-col-6" style="padding-top:0px;">
+                    <strong>Quieres buscar tu ubicación en el mapa?</strong>
+                </div>
+                <br>
+                <div class="p-col-6">
+                    <p-button label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
+                </div>
+            </div>
+
+        </div>
+        <div class="p-col-6">
+            <div class="p-col-12" style="padding: 0px;">
+                <p-card>
+                    <div class="p-col-12" *ngIf="mapedit">
+                        <google-map width="200" height="110" [zoom]="zoom" [center]="realPosition"></google-map>
+                    </div>
+                    <div class="p-col-12" *ngIf="!mapedit">
+                        <google-map width="200" height="110" [zoom]="zoom" [center]="center"></google-map>
+                    </div>
+                </p-card>
+            </div>
+        </div>
+        <!--DIALOG-->
+
+        <div class="p-col-5" >
+            <p-dialog header="Marca la posición más cercana a ti" [(visible)]="displayi">
+
+                <strong> Sus Coordenadas son:
+                    <span style="font-size: medium;">
+                        <span style="color:red;">LAT ({{center['lat']}}) LNG ({{center['lng']}})</span>
+                    </span>
+                </strong>
+                <google-map width="535" height="500" [zoom]="zoomx1" [center]="realPosition"></google-map>
+            </p-dialog>
+        </div>
+        <div class="p-col-7">
+            <!--
+                        <img src="../../../assets/maps.jpg" width="150" height="130" /> -->
+        </div>
+    </div>
+    <div class="p-col-12" style="padding:0px;">
+        <div class="p-col-6" style="padding:0px;">
+            <span style="width:100%"><b>Teléfono</b></span>
+        </div>
+        <div class="p-col-2" style="padding:0px;">
+            <span><b>Correspondencia</b></span>
+        </div>
+    </div>
+    <div class="p-col-12" style="padding: 0px;">
+
+        <div class="p-col-6" style="padding-top:0px;">
+            <input pInputText type="text" placeholder="Celular" style="width: 100%;">
+        </div>
+        
+        <div class="p-col-2" style="padding-top:0px;">
+            <p-dropdown [style]="{'width': '100%'}" [options]="options" [(ngModel)]="dat" placeholder="tipo.."></p-dropdown>
+        </div>
+
+    </div>
+    <div class="p col-12" style="padding-top: 0px;">
+        <div class="p-col-6">
+            <input pInputText type="text" placeholder="Convencional" style="width: 100%;">
+        </div>
+        
+        <div class="p-col-6" style="padding-top:0px;">
+            <input pInputText type="text" placeholder="Correo electrónico" style="width: 100%;">
+        </div>
+
+    </div>
+    <div class="p-col-12" style="padding: 0px;">
+        <div class="p-col-9" style="padding-top:0px;">
+            <span style="width:100%">Desea recibir notificaciones importantes acerca de beneficios y promiciones</span>
+        </div>
+        <div class="p-col-1" style="padding-top:0px;">
+        </div>
+        <div class="p-col-2" style="padding-top:0px;">
+            <p-checkbox  [style]="{'width': '100%'}" value="" [(ngModel)]="selectedValues"></p-checkbox>
+        </div>
+    </div>
+</p-card>
