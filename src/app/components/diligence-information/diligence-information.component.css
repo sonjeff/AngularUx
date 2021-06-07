@@ -14,3 +14,12 @@
     background: #5cb85c;
    
 }
+/*
+:host ::ng-deep .p-steps-item .p-steps-number .p-steps-title{
+ 
+}*/
+:host ::ng-deep .p-steps .p-steps-item .p-steps-number .p-steps-title {
+  padding: 100px;
+  
+}
+
