@@ -1,0 +1,12 @@
+.p-col-12 {
+    
+    padding: 0px;
+   /* margin: 0px;*/
+   /* border: 5px solid darkblue;*/
+   /* min-height: 0px;*/
+}
+
+.small{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
