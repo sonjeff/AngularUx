@@ -1,10 +1,10 @@
-<p-card [style]="{width: '560px', height: '625px'}">
-    <div class="p-col-12" style="padding: 0px; font-size: 15px;">
+<p-card [style]="{width: '560px', height: '620px'}">
+    <div class="p-col-12" style="font-size: 15px;">
         <div class="p-col-7">
             <strong>Vivienda</strong>
         </div>
 
-        <p-tabView>
+        <p-tabView class="small">
 
             <p-tabPanel header="Propia">
                 <div class="p-col-12">
@@ -33,7 +33,7 @@
                 </div>
             </p-tabPanel>
 
-            <p-tabPanel header="Arriendo">
+            <p-tabPanel header="Arriendo" class="samll">
                 <div class="p-col-12">
                     <div class="p-col-8">
                         <input pInputText type="text" placeholder="Calle Principal" style="width: 100%;">
@@ -69,23 +69,23 @@
         <div class="p-col-6">
             <div class="p-col-12">
                 <div class="p-col-6">
-                    <strong>Quieres buscar tu ubicación en el mapa?</strong>
+                    <strong class="small">Quieres buscar tu ubicación en el mapa?</strong>
                 </div>
                 <br>
                 <div class="p-col-6">
-                    <p-button label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
+                    <p-button class="small" label="Mapa" (click)="getLocation()" (click)="showDialog()"></p-button>
                 </div>
             </div>
 
         </div>
         <div class="p-col-6" style="padding: 0px;">
-            <div class="p-col-12" style="padding: 0px;">
+            <div class="p-col-12" >
                 <p-card>
-                    <div class="p-col-12" *ngIf="mapedit" style="padding: 0px;">
+                    <div class="p-col-12" *ngIf="mapedit" >
                         <google-map width="225" height="110" [zoom]="zoom" [center]="realPosition"></google-map>
                     </div>
-                    <div class="p-col-12" *ngIf="!mapedit" style="padding: 0px;">
-                        <google-map width="225" height="110" [zoom]="zoom" [center]="center"></google-map>
+                    <div class="p-col-12" *ngIf="!mapedit" >
+                        <google-map width="225px" height= "110px" [zoom]="zoom" [center]="center"></google-map>
                     </div>
                 </p-card>
             </div>
