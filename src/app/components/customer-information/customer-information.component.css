@@ -7,3 +7,9 @@
     background: #5cb85c;
     padding: 0px;
 }
+.ui-dropdown .ui-dropdown-panel {
+    min-width: 80% !important;
+    font-size: 10px !important;
+    width: max-content;
+  }
+  

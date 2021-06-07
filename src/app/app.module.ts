@@ -40,6 +40,8 @@ import {Locationservice} from './components/housing-information/location.service
 import { PropertiesOrAssetsComponent } from './components/properties-or-assets/properties-or-assets.component';
 import {TableModule} from 'primeng/table';
 import { WorkingInformationComponent } from './components/working-information/working-information.component';
+import {MatIconModule} from '@angular/material/icon';
+import DriveEtaIcon from '@material-ui/icons/DriveEta';
 
 @NgModule({
   declarations: [
@@ -91,7 +93,8 @@ import { WorkingInformationComponent } from './components/working-information/wo
     DialogModule,
     GoogleMapsModule,
     RadioButtonModule,
-    TableModule
+    TableModule,
+    MatIconModule
 
   ],
   providers: [Locationservice],
